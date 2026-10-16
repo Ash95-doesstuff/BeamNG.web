@@ -1,0 +1,164 @@
+{
+"pigeon_headlight_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Headlight",
+        "value":40,
+    },
+    "slotType" : "pigeon_headlight_R",
+    "slots2": [
+        ["name",                            "allowTypes",                 "denyTypes", "default",                "description"],
+        ["pigeon_headlight_R_low_bulb",     ["headlightBulb_halogen_55W_combined"],  [],          "headlightBulb_halogen_55W_combined", "Right Low Beam Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowbeam_filament",
+          "$lightPattern":"RHD",
+          "$nodeRef":"fe2r", "$nodeX":"fe2rr", "$nodeY":"fe1r",
+          "$deformGroup":"headlight_R_break",
+          "$posX":-0.375, "$posY":-1.384, "$posZ":0.691,
+          "$rotX":-0.57, "$rotY":0, "$rotZ":180,
+          //"$lightBrightness":0.3,
+          //"$lightOuterAngle":75,
+          //"$flareScale":0.06
+        }
+        }],
+        ["pigeon_headlight_R_high_bulb",    ["headlightBulb_halogen_60W_combined"],  [],          "headlightBulb_halogen_60W_combined", "Right High Beam Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"highbeam_filament",
+          "$lightPattern":"RHD",
+          "$nodeRef":"fe2r", "$nodeX":"fe2rr", "$nodeY":"fe1r",
+          "$deformGroup":"headlight_R_break",
+          "$posX":-0.375, "$posY":-1.384, "$posZ":0.691,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          //"$lightBrightness":0.6,
+          //"$lightOuterAngle":85,
+          //"$flareScale":0.08
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         {"deformGroup":"headlight_R_break", "deformMaterialBase":"pigeon_glass", "deformMaterialDamaged":"pigeon_glass_dmg"},
+         ["pigeon_headlightglass_R", ["pigeon_body"]],
+         {"deformGroup":"headlight_R_break", "deformMaterialBase":"pigeon_lights", "deformMaterialDamaged":"pigeon_lights_dmg"},
+         ["pigeon_headlight_R", ["pigeon_body"]],
+         {"deformGroup":""},
+    ],
+},
+"pigeon_headlight_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Headlight",
+        "value":40,
+    },
+    "slotType" : "pigeon_headlight_L",
+    "slots2": [
+        ["name",                            "allowTypes",                 "denyTypes", "default",                "description"],
+        ["pigeon_headlight_L_low_bulb",     ["headlightBulb_halogen_55W_combined"],  [],          "headlightBulb_halogen_55W_combined", "Left Low Beam Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowbeam_filament",
+          "$lightPattern":"RHD",
+          "$nodeRef":"fe2l", "$nodeX":"fe2ll", "$nodeY":"fe1l",
+          "$deformGroup":"headlight_L_break",
+          "$posX":0.375, "$posY":-1.384, "$posZ":0.691,
+          "$rotX":-0.57, "$rotY":0, "$rotZ":180,
+          //"$lightBrightness":0.3,
+          //"$lightOuterAngle":75,
+          //"$flareScale":0.06
+        }
+        }],
+        ["pigeon_headlight_L_high_bulb",    ["headlightBulb_halogen_60W_combined"],  [],          "headlightBulb_halogen_60W_combined", "Left High Beam Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"highbeam_filament",
+          "$lightPattern":"RHD",
+          "$nodeRef":"fe2l", "$nodeX":"fe2ll", "$nodeY":"fe1l",
+          "$deformGroup":"headlight_L_break",
+          "$posX":0.375, "$posY":-1.384, "$posZ":0.691,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          //"$lightBrightness":0.6,
+          //"$lightOuterAngle":85,
+          //"$flareScale":0.08
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         {"deformGroup":"headlight_L_break", "deformMaterialBase":"pigeon_glass", "deformMaterialDamaged":"pigeon_glass_dmg"},
+         ["pigeon_headlightglass_L", ["pigeon_body"]],
+         {"deformGroup":"headlight_L_break", "deformMaterialBase":"pigeon_lights", "deformMaterialDamaged":"pigeon_lights_dmg"},
+         ["pigeon_headlight_L", ["pigeon_body"]],
+         {"deformGroup":""},
+    ],
+},
+"pigeon_signal_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Signal",
+        "value":15,
+    },
+    "slotType" : "pigeon_signal_FR",
+    "slots2": [
+        ["name",                          "allowTypes",                 "denyTypes", "default",               "description"],
+        ["pigeon_signal_FR_bulb",         ["incandescent_amber_21W"],  [],          "incandescent_amber_21W","Front Right Signal Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_R_filament",
+          "$nodeRef":"fe2r", "$nodeX":"fe2rr", "$nodeY":"fe1r",
+          "$deformGroup":"headlight_R_break",
+          "$posX":-0.362, "$posY":-1.414, "$posZ":0.569,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          //"$lightBrightness":0.04,
+          //"$flareScale":0.03
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         {"deformGroup":"headlight_R_break", "deformMaterialBase":"pigeon_lights", "deformMaterialDamaged":"pigeon_lights_dmg"},
+         ["pigeon_signal_R", ["pigeon_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.4}],
+         {"deformGroup":""},
+    ],
+},
+"pigeon_signal_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Signal",
+        "value":15,
+    },
+    "slotType" : "pigeon_signal_FL",
+    "slots2": [
+        ["name",                          "allowTypes",                 "denyTypes", "default",               "description"],
+        ["pigeon_signal_FL_bulb",         ["incandescent_amber_21W"],  [],          "incandescent_amber_21W","Front Left Signal Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_L_filament",
+          "$nodeRef":"fe2l", "$nodeX":"fe2ll", "$nodeY":"fe1l",
+          "$deformGroup":"headlight_L_break",
+          "$posX":0.362, "$posY":-1.414, "$posZ":0.569,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          //"$lightBrightness":0.04,
+          //"$flareScale":0.03
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         {"deformGroup":"headlight_L_break", "deformMaterialBase":"pigeon_lights", "deformMaterialDamaged":"pigeon_lights_dmg"},
+         ["pigeon_signal_L", ["pigeon_body"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.4}],
+         {"deformGroup":""},
+    ],
+},
+}

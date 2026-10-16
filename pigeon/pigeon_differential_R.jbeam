@@ -1,0 +1,98 @@
+{
+"pigeon_differential_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Open Rear Differential",
+        "value":160,
+    },
+    "slotType" : "pigeon_differential_R",
+    "slots2": [
+        ["name",                "allowTypes",            "denyTypes", "default",                 "description"],
+        ["pigeon_finaldrive_R", ["pigeon_finaldrive_R"], [],          "pigeon_finaldrive_R_456", "Rear Final Drive", {"coreSlot":true}],
+        ["pigeon_driveshaft_R", ["pigeon_driveshaft_R"], [],          "pigeon_driveshaft_R",     "Rear Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "uiName":"Rear Differential", "defaultVirtualInertia":0.25}],
+    ],
+    "differential_R": {
+        "friction": 1.19,
+        "dynamicFriction": 0.00056,
+        "torqueLossCoef": 0.032,
+    },
+},
+"pigeon_differential_R_welded": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Welded Rear Differential",
+        "value":150,
+    },
+    "slotType" : "pigeon_differential_R",
+    "slots2": [
+        ["name",                "allowTypes",            "denyTypes", "default",                 "description"],
+        ["pigeon_finaldrive_R", ["pigeon_finaldrive_R"], [],          "pigeon_finaldrive_R_456", "Rear Final Drive", {"coreSlot":true}],
+        ["pigeon_driveshaft_R", ["pigeon_driveshaft_R"], [],          "pigeon_driveshaft_R",     "Rear Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"locked", "lockTorque":5000, "uiName":"Rear Differential", "defaultVirtualInertia":0.25}],
+    ],
+    "differential_R": {
+        "friction": 1.19,
+        "dynamicFriction": 0.00056,
+        "torqueLossCoef": 0.032,
+    },
+},
+"pigeon_differential_R_lsd": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Limited-Slip Rear Differential",
+        "value":210,
+    },
+    "slotType" : "pigeon_differential_R",
+    "slots2": [
+        ["name",                "allowTypes",            "denyTypes", "default",                 "description"],
+        ["pigeon_finaldrive_R", ["pigeon_finaldrive_R"], [],          "pigeon_finaldrive_R_456", "Rear Final Drive", {"coreSlot":true}],
+        ["pigeon_driveshaft_R", ["pigeon_driveshaft_R"], [],          "pigeon_driveshaft_R",     "Rear Driveshaft"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"lsd",  "lsdPreload":70, "lsdLockCoef":0.225, "lsdRevLockCoef":0.1, "uiName":"Rear Differential", "defaultVirtualInertia":0.25}],
+    ],
+    "differential_R": {
+        "friction": 1.19,
+        "dynamicFriction": 0.00056,
+        "torqueLossCoef": 0.032,
+    },
+},
+"pigeon_driveshaft_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Driveshaft",
+        "value":200,
+    },
+    "slotType" : "pigeon_driveshaft_R",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //rear driveshaft
+        ["torsionReactor", "torsionReactorR", "gearbox", 1, {}],
+        ["shaft", "driveshaft", "torsionReactorR", 1, {"breakTriggerBeam":"driveshaft", "uiName":"Rear Driveshaft", "electricsName":"driveshaft", "friction":0.11, "dynamicFriction":0.000245}],
+    ],
+    "torsionReactorR": {
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+    },
+    "props": [
+        ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
+        ["driveshaft", "pigeon_driveshaft", "ax3", "ax3rr", "tra1",    {"x":-91, "y":13, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //driveshaft
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":0.04, "beamShortBound":0.04},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":2000,"beamStrength":3000},
+          {"beamLimitSpring":5001000,"beamLimitDamp":100},
+          ["ax3",  "tra1", {"name":"driveshaft","optional":true,"breakGroup":"driveshaft","deformGroup":"driveshaft"}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

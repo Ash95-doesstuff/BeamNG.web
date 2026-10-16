@@ -1,0 +1,526 @@
+{
+"pigeon_suspension_F_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Swing Arm Front Suspension",
+        "value":310,
+    },
+    "slotType" : "pigeon_suspension_F",
+    "slots2": [
+        ["name",                  "allowTypes",              "denyTypes", "default",               "description"],
+        ["pigeon_brake_F_3w",     ["pigeon_brake_F_3w"],     [],          "pigeon_brake_F_3w",     "Front Brakes"],
+        ["wheel_F_3_3w",          ["wheel_F_3_3w"],          [],          "pigeon_wheel_02a_F_3w", "Front Wheel",    {"nodeMove":{"x":0.0, "y":-1.096,"z":0.2407}}],
+        ["pigeon_wheeldata_F_3w", ["pigeon_wheeldata_F_3w"], [],          "pigeon_wheeldata_F_3w", "Front Spindle",  {"coreSlot":true}],
+        ["pigeon_coilover_F_3w",  ["pigeon_coilover_F_3w"],  [],          "pigeon_coilover_F_3w",  "Front Coilover"],
+        ["pigeon_steering_3w",    ["pigeon_steering_3w"],    [],          "pigeon_steering_3w",    "Steering"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pigeon_frame_3w", ["pigeon_frame"]],
+         ["pigeon_swingarm_F_3w", ["pigeon_swingarm_F"]],
+         ["pigeon_hub_F_3w", ["pigeon_spindle_F","pigeon_wheelhub_F"]],
+         ["pigeon_steeringarm_F_3w", ["pigeon_spindle_F","pigeon_wheelhub_F"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         //--FRONT AXIS POINTS--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         //upper coilover mount
+         {"nodeWeight":1.5},
+         {"group":"pigeon_coilover_F"},
+         ["shkt1",-0.142, -0.99,   0.60,   {"selfCollision":false}],
+
+         //swingarm hinge
+         {"group":"pigeon_swingarm_F"},
+         {"nodeWeight":2.5},
+         ["fx1r", -0.34,  -0.795,  0.241],
+         ["fx1l",  0.0,   -0.795,  0.241],
+
+         //--FRONT SWING ARM SUSPENSION--
+
+         //swing arm
+         {"nodeWeight":2.0},
+         {"group":"pigeon_swingarm_F"},
+         //["fx2r", -0.26, -0.87, 0.42, {"collision":false, "selfCollision":false}],
+         //["fx2l",  0.26, -0.87, 0.42, {"collision":false, "selfCollision":false}],
+         //rigidifier
+         {"nodeWeight":1.5},
+         ["fx1",  -0.24,  -1.11,   0.31],
+         ["fx3",  -0.24,  -1.11,   0.20],
+         //lower coilover mount
+         {"group":["pigeon_coilover_F","pigeon_swingarm_F"]},
+         ["shkb1",-0.142, -1.09,   0.28],
+         //steering axis
+         {"nodeWeight":2.75},
+         {"selfCollision":true},
+         {"group":["pigeon_swingarm_F","pigeon_spindle_F"]},
+         ["fh1",   -0.0,  -1.106,  0.15],
+         {"group":["pigeon_coilover_F","pigeon_swingarm_F","pigeon_spindle_F"]},
+         ["fh2",   -0.0,  -1.086,  0.33],
+
+         //spindle shape
+         {"nodeWeight":2.75},
+         {"group":"pigeon_spindle_F"},
+         ["fh3",  -0.02,  -1.19,   0.24],
+         ["fh4",  -0.02,  -1.01,   0.24],
+         {"group":["pigeon_steering_rod","pigeon_spindle_F"]},
+         ["fh5",  -0.175, -1.28,   0.24],
+         {"group":""},
+   ],
+   "torsionbars":[
+       ["id1:", "id2:", "id3:", "id4:"],
+       //swingarm torsion rigidity
+       {"spring":150000, "damp":10, "deform":5000, "strength":50000},
+       ["fx1r", "fx1l", "fh2", "fh1"],
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          //--FRONT AXIS POINTS--
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2001000,"beamDamp":100},
+          {"beamDeform":12000,"beamStrength":125000},
+
+          //swingarm mount
+          {"deformLimitExpansion":""},
+          //{"breakGroup":"swingarm_L"},
+          ["fx1l",  "f2l"],
+          ["fx1l",  "f8l"],
+          //["fx1l", "f7l"],
+          //["fx1l", "f1l"],
+          ["fx1l",  "f2"],
+          ["fx1l",  "f8"],
+          {"beamDeform":6000,"beamStrength":75000},
+          //["fx1l", "f9l"],
+          //["fx1l", "f3l"],
+          ["fx1l",  "f2r"],
+          ["fx1l",  "f8r"],
+          ["fx1l",  "f1"],
+          ["fx1l",  "f7"],
+
+          //{"breakGroup":"swingarm_R"},
+          {"beamDeform":12000,"beamStrength":125000},
+          ["fx1r",  "f2r"],
+          ["fx1r",  "f8r"],
+          ["fx1r",  "f7r"],
+          ["fx1r",  "f1r"],
+          ["fx1r",  "f2"],
+          ["fx1r",  "f8"],
+          {"beamDeform":6000,"beamStrength":75000},
+          ["fx1r",  "f9r"],
+          ["fx1r",  "f3r"],
+          //{"breakGroup":""},
+
+          //coil top to frame
+          {"beamSpring":1501000,"beamDamp":100},
+          {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+          ["shkt1", "f1"],
+          ["shkt1", "f7"],
+          ["shkt1", "f1r"],
+          ["shkt1", "f7r"],
+          ["shkt1", "f14r"],
+          ["shkt1", "f16r"],
+          ["shkt1", "f2r"],
+          ["shkt1", "f2l"],
+
+          //--FRONT SWING ARM SUSPENSION--
+
+          //swingarm shape
+          {"deformLimitExpansion":1.2},
+          {"beamSpring":4501000,"beamDamp":150},
+          {"beamDeform":16000,"beamStrength":1500000},
+          ["fx1r",  "fx1l"],
+          //["fx2r", "fx2l"],
+          //["fx1r", "fx2r"],
+          //["fx1l", "fx2l"],
+          //["fx1r", "fx2l", {"deformLimitExpansion":""}],
+          //["fx2r", "fx1l", {"deformLimitExpansion":""}],
+          //["fx2r", "fh2"],
+          //["fh1", "fx2l"],
+          //["fx2r", "fh1"],
+          //["fx2l", "fh2"],
+          ["fx1r",  "fh1"],
+          ["fx1r",  "fh2"],
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          ["fx1l",  "fh1"],
+          ["fx1l",  "fh2"],
+
+          //coilover mount
+          {"deformLimitExpansion":""},
+          {"beamSpring":2501000,"beamDamp":150},
+          ["shkb1", "fh2"],
+          ["shkb1", "fh1"],
+          //["shkb1", "fx2l"],
+          //["shkb1", "fx2r"],
+          ["shkb1", "fx1r"],
+          ["shkb1", "fx1l"],
+
+          //rigidifier
+          {"beamSpring":3001000,"beamDamp":50},
+          ["fx3",   "fh2"],
+          ["fx3",   "fh1"],
+          ["fx3",   "fx1r"],
+          ["fx3",   "fx1l"],
+          //["fx3", "fx2l"],
+          //["fx3", "fx2r"],
+
+          ["fx1",   "fh2"],
+          ["fx1",   "fh1"],
+          ["fx1",   "fx1l"],
+          ["fx1",   "fx1r"],
+          //["fx1", "fx2l"],
+          //["fx1", "fx2r"],
+
+          ["fx1",   "fx3"],
+
+          {"beamSpring":1001000,"beamDamp":50},
+          ["fx1",   "shkb1"],
+          ["fx3",   "shkb1"],
+
+          //spindle
+          {"deformLimitExpansion":1.2},
+          {"beamSpring":4001000,"beamDamp":150},
+          {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+          ["fh2",   "fh3"],
+          ["fh3",   "fh1"],
+          ["fh1",   "fh4"],
+          ["fh4",   "fh2"],
+          ["fh3",   "fh5"],
+          ["fh1",   "fh5"],
+          ["fh2",   "fh5"],
+          ["fh4",   "fh5"],
+          ["fh2",   "fh1"],
+          ["fh3",   "fh4"],
+
+          //spindle to wheel
+          {"beamSpring":4001000,"beamDamp":150},
+          {"beamDeform":20000,"beamStrength":125000},
+          {"breakGroup":"wheel_F"},
+          ["fh1",   "fw1l",  {"name":"axle_F"}],
+          ["fh2",   "fw1l"],
+          ["fh5",   "fw1l"],
+          ["fh3",   "fw1l"],
+          ["fh4",   "fw1l"],
+          ["fh1",   "fw1r"],
+          ["fh2",   "fw1r"],
+          ["fh5",   "fw1r"],
+          ["fh3",   "fw1r"],
+          ["fh4",   "fw1r"],
+          {"breakGroup":""},
+
+          //collision limiter
+          {"beamPrecompression":0.7, "beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          //["fh2", "f2"],
+          //["fh1", "f8"],
+          {"optional":true},
+          ["fw1l",  "f2"],
+          ["fw1l",  "f8"],
+          ["fw1r",  "f2"],
+          ["fw1r",  "f8"],
+          {"optional":false},
+
+          //to engine
+          {"beamPrecompression":0.6, "beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+          {"optional":true},
+          ["fw1l",  "e1r"],
+          ["fw1l",  "e1l"],
+          ["fw1r",  "e1r"],
+          ["fw1r",  "e1l"],
+          {"optional":false},
+
+          //extension/compression limit
+          {"beamPrecompression":1, "beamType":"|BOUNDED","beamLongBound":1,"beamShortBound":1},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":24500,"beamStrength":245000},
+          {"beamLimitSpring":1001000,"beamLimitDamp":100},
+          ["fh1",   "f7",    {"longBoundRange":0.2,"shortBoundRange":0.14,"boundZone":0.02,"beamLimitDampRebound":0,"dampCutoffHz":250}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:",  "id2:", "id3:"],
+
+            //swing arm
+            {"group":"pigeon_swingarm"},
+            {"triangleType":"NONCOLLIDABLE"},
+            ["fh3",   "fh1",  "fh4"],
+            ["fh4",   "fh2",  "fh3"],
+            ["fh3",   "fh5",  "fh1"],
+            ["fx1r",  "fx3",  "shkb1"],
+            ["shkb1", "fx3",  "fh3"],
+            {"triangleType":"NORMALTYPE"},
+
+            //chassis fill
+            {"group":"pigeon_frame"},
+            {"dragCoef":2.8},
+            ["f1r",   "f2r",  "f2"],
+            ["f1",    "f1r",  "f2"],
+            ["f1",    "f2",   "f1l"],
+            ["f1l",   "f2",   "f2l"],
+            ["rs1l",  "f1l",  "f14l"],
+            ["rs1l",  "f1",   "f1l"],
+            ["f14r",  "f1r",  "rs1r"],
+            ["rs1r",  "f1r",  "f1"],
+            ["rs1r",  "f1",   "rs1l"],
+            ["f15l",  "rs1l", "f14l"],
+            ["f15r",  "f14r", "rs1r"],
+            ["f15r",  "rs1r", "f15"],
+            ["f15",   "rs1l", "f15l"],
+            ["f15",   "rs1r", "rs1l"],
+            {"group":""},
+    ],
+
+    "pressureWheels": [
+            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+            //cancel out brake properties
+            {"brakeTorque":0},
+            {"parkingTorque":0},
+            {"enableBrakeThermals":false},
+            {"brakeDiameter":false},
+            {"brakeMass":false},
+            {"brakeType":false},
+            {"rotorMaterial":false},
+            {"brakeVentingCoef":false},
+    ],
+},
+"pigeon_wheeldata_F_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Spindle",
+        "value":50,
+    },
+    "slotType" : "pigeon_wheeldata_F_3w",
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //front
+        {"selfCollision":false},
+        {"collision":true},
+        {"hubcapBreakGroup":"hubcap_F"},
+        {"hubcapGroup":"hubcap_F"},
+        {"axleBeams":["axle_F"]},
+        ["F", "wheel_F", "tire_F", "fw1l", "fw1r", 9999, "fh3", -1, {"steerAxisUp:":"fh2","steerAxisDown:":"fh1"}],
+        {"selfCollision":true},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"enableHubcaps":false},
+        {"enableTireLbeams":false},
+        {"enableTireSideReinfBeams":false},
+        {"enableTireReinfBeams":false},
+        {"enableTreadReinfBeams":false},
+        {"enableTirePeripheryReinfBeams":false},
+        {"loadSensitivitySlope":""},
+        {"noLoadCoef":""},
+        {"fullLoadCoef":""},
+        {"frictionCoef":""},
+        {"slidingFrictionCoef":""},
+        {"softnessCoef":0.5},
+        {"treadCoef":1.0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "wheelaxleF", "driveshaft_F", 1, {"connectedWheel":"F", "breakTriggerBeam":"axle_F", "friction":0.65, "dynamicFriction":0.00127}],
+    ],
+},
+"pigeon_coilover_F_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Coilover",
+        "value":80,
+    },
+    "slotType" : "pigeon_coilover_F_3w",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pigeon_coilover_F_3w", ["pigeon_coilover_F"]],
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          //spring
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":30000,"beamDamp":0,"beamDeform":15000,"beamStrength":150000},
+          ["shkt1", "shkb1", {"precompressionRange":0.085, "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>spring_compress_01","colorFactor":0.4,"attackFactor":7,"volumeFactor":6,"decayFactor":6,"noiseFactor":0.01,"pitchFactor":1.2,"maxStress":12000}],
+          //damper
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDeform":15000,"beamStrength":150000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["shkt1", "shkb1", {"beamDamp":1200, "beamDampRebound":3600,"dampCutoffHz":400}],
+          //bumpstop
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":251000,"beamLimitDamp":5000},
+          ["shkt1", "shkb1", {"longBoundRange":0.09,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":250}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"pigeon_coilover_F_race_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Coilover",
+        "value":700,
+    },
+    "slotType" : "pigeon_coilover_F_3w",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pigeon_coilover_F_race_3w", ["pigeon_coilover_F"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_F", "range", "+m", "Suspension", 0, -0.06, 0.04, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
+        ["$spring_F", "range", "N/m", "Suspension", 50000, 20000, 80000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 3000, 500, 5000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 9000, 500, 10000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}]
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          //spring
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":"$spring_F","beamDamp":0,"beamDeform":15000,"beamStrength":150000},
+          ["shkt1", "shkb1", {"precompressionRange":"$=$springheight_F*0.85+0.04", "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>spring_compress_01","colorFactor":0.4,"attackFactor":8,"volumeFactor":6,"decayFactor":6,"noiseFactor":0.01,"pitchFactor":1,"maxStress":16000}],
+          //damper
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDeform":15000,"beamStrength":150000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["shkt1", "shkb1", {"beamDamp":"$damp_bump_F", "beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.4,"beamDampFast":"$=$damp_bump_F / 3","beamDampReboundFast":"$=$damp_rebound_F / 3","dampCutoffHz":400}],
+          //bumpstop
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":251000,"beamLimitDamp":5000},
+          ["shkt1", "shkb1", {"longBoundRange":0.09,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":250}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"pigeon_coilover_F_offroad_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Off-Road Front Coilover",
+        "value":600,
+    },
+    "slotType" : "pigeon_coilover_F_3w",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pigeon_coilover_F_3w", ["pigeon_coilover_F"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_F", "range", "+m", "Suspension", 0, -0.04, 0.06, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
+        ["$spring_F", "range", "N/m", "Suspension", 30000, 20000, 80000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 2000, 500, 5000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_bump_F_fast", "range", "N/m/s", "Suspension", 4000, 500, 5000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 5600, 500, 10000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}]
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          //spring
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":"$spring_F","beamDamp":0,"beamDeform":15000,"beamStrength":150000},
+          ["shkt1", "shkb1", {"precompressionRange":"$=$springheight_F*0.85+0.12", "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>spring_compress_01","colorFactor":0.4,"attackFactor":6,"volumeFactor":4.5,"decayFactor":5,"noiseFactor":0.01,"pitchFactor":1,"maxStress":12000}],
+          //damper
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDeform":15000,"beamStrength":150000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          ["shkt1", "shkb1", {"beamDamp":"$damp_bump_F", "beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":1.2,"beamDampFast":"$damp_bump_F_fast","beamDampReboundFast":"$damp_rebound_F","dampCutoffHz":400}],
+          //bumpstop
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":151000,"beamLimitDamp":5000},
+          ["shkt1", "shkb1", {"longBoundRange":0.1,"shortBoundRange":0.07,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":250}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"pigeon_steering_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Steering",
+        "value":80,
+    },
+    "slotType" : "pigeon_steering_3w",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["pigeon_steering_3w", ["pigeon_body"]],
+         ["pigeon_steerbox_3w", ["pigeon_frame", "pigeon_steeringbox"]],
+         ["pigeon_pushrod_F_3w", ["pigeon_pitman", "pigeon_steeringbox"]],
+         ["pigeon_steeringrod_3w", ["pigeon_pitman", "pigeon_steering_rod"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$steer_center", "range", "", "Wheel Alignment", 0.9969, 1.02, 0.98, "Steering Center", "Percentage of adjustment range", {"subCategory":" Front"}],
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+         {"nodeWeight":2.0},
+         {"group":"pigeon_pitman"},
+         ["st1r",-0.365, -0.955,  0.24],
+         {"group":"pigeon_steeringbox"},
+         {"nodeWeight":2.0},
+         ["st2r",-0.38,  -0.921,  0.522],
+         ["st3r",-0.22,  -0.921,  0.522],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamSpring":3001000,"beamDamp":150},
+          {"beamDeform":10000,"beamStrength":500000},
+          //pitman arm
+          {"deformLimitExpansion":1.2},
+          ["st2r", "st1r"],
+          ["st3r", "st1r"],
+
+          //tierod
+          {"beamSpring":5001000,"beamDamp":150},
+          ["st1r", "fh5",  {"beamPrecompression":"$=$steer_center+0.003","beamPrecompressionTime":0.5}],
+
+          //steering box
+          {"deformLimitExpansion":""},
+          {"beamSpring":2001000,"beamDamp":150},
+          {"beamDeform":6000,"beamStrength":1500000},
+          ["st3r", "f1r"],
+          ["st3r", "f7r"],
+          ["st3r", "f2r"],
+          ["st3r", "f8r"],
+          ["st3r", "f7"],
+          ["st3r", "f1"],
+
+          ["st2r", "f1r"],
+          ["st2r", "f7r"],
+          ["st2r", "f2r"],
+          ["st2r", "f8r"],
+          ["st2r", "f7"],
+          ["st2r", "f1"],
+
+          ["st2r", "st3r"],
+
+          //steering damper
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":0,"beamDeform":50000,"beamStrength":1000000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamDamp":100},
+          ["fh5",  "fx3",  {"beamDampVelocitySplit":0.05,"beamDampFast":250,"dampCutoffHz":1000}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            //pitman arm
+            {"triangleType":"NONCOLLIDABLE"},
+            ["st2r", "st1r", "st3r"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":150000, "damp":20, "deform":"FLT_MAX", "strength":"FLT_MAX"},
+        ["st1r","st2r","st3r","f2r", {"outLimit":-0.40,"inLimit":0.40,"steeringWheelLock":540,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+    ],
+    "input": {
+        "FFBcoef":"$=$ffbstrength*9",
+    },
+},
+}
