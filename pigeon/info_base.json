@@ -1,0 +1,49 @@
+{
+  "0-100 km/h":29.7,
+  "0-60 mph":27,
+  "100-0 km/h":71.1,
+  "60-0 mph":216,
+  "BoundingBox":[
+    [
+      -0.36,
+      -1.261,
+      -0.2033
+    ],
+    [
+      1.08,
+      2.012,
+      1.27
+    ]
+  ],
+  "Braking G":0.553,
+  "Config Type":"Factory",
+  "Configuration":"vehiclesData.miramar.base_M.Configuration",
+  "Description":"vehiclesData.pigeon.base.Description",
+  "Drag Times":{
+    "brakingG":0.6975010972,
+    "time_0_60":0,
+    "time_1000":18.2425013,
+    "time_1_4":22.2525016,
+    "time_1_8":13.60000096,
+    "time_330":8.464500576,
+    "time_60":2.689000187,
+    "velAt_1_4":25.18709896,
+    "velAt_1_8":21.08611423
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":41,
+  "Population":300,
+  "Power":31,
+  "PowerPeakRPM":"5250 - 5850",
+  "Propulsion":"ICE",
+  "Top Speed":31.67676952,
+  "Torque":45,
+  "TorquePeakRPM":"2800 - 4650",
+  "Transmission":"Manual",
+  "Value":10000,
+  "Weight":625,
+  "Weight/Power":20.16129032,
+  "defaultPaintName1":"Verdant Green"
+}

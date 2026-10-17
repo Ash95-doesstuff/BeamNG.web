@@ -1,0 +1,49 @@
+{
+  "0-100 km/h":31.1,
+  "0-60 mph":28.2,
+  "100-0 km/h":48.4,
+  "60-0 mph":144.5,
+  "BoundingBox":[
+    [
+      -0.36,
+      -1.261,
+      -0.2033
+    ],
+    [
+      1.16,
+      2.012,
+      1.27
+    ]
+  ],
+  "Braking G":0.812,
+  "Config Type":"Factory",
+  "Configuration":"vehiclesData.pigeon.base_4w.Configuration",
+  "Description":"vehiclesData.pigeon.base_4w.Description",
+  "Drag Times":{
+    "brakingG":0.7606266524,
+    "time_0_60":0,
+    "time_1000":18.60750135,
+    "time_1_4":22.66000165,
+    "time_1_8":13.90250101,
+    "time_330":8.686500619,
+    "time_60":2.779500187,
+    "velAt_1_4":24.90147136,
+    "velAt_1_8":20.79753722
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":41,
+  "Population":300,
+  "Power":31,
+  "PowerPeakRPM":"5250 - 5850",
+  "Propulsion":"ICE",
+  "Top Speed":31.63548688,
+  "Torque":45,
+  "TorquePeakRPM":"2800 - 4650",
+  "Transmission":"Manual",
+  "Value":16000,
+  "Weight":670,
+  "Weight/Power":21.61290323,
+  "defaultPaintName1":"Aquamarine"
+}

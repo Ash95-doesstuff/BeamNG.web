@@ -1,0 +1,57 @@
+{
+  "Author": "BeamNG",
+  "Body Style": "Pickup",
+  "Brand": "Ibishu",
+  "Country": "Japan",
+  "Derby Class": "Sub-Compact",
+  "Description": "vehiclesData.pigeon.Description",
+  "Name": "vehiclesData.pigeon.Name",
+  "Type": "Car",
+  "InsuranceClass": "dailyDriver",
+  "Region": "asiaPacific",
+  "Years": {
+    "max": 1989,
+    "min": 1980
+  },
+  "defaultPaintName1": "Verdant Green",
+  "default_pc": "base",
+  "paints": {
+    "Violet": {
+      "class": "custom",
+      "baseColor": [0.45,  0.46,  0.53,  1.2],
+      "clearcoat": 0.1,
+      "clearcoatRoughness": 0.09,
+      "metallic": 0,
+      "roughness": 0.07
+    }
+  },
+  "multiPaintSetups": [],
+  "libraryPaints": [
+    "aquamarine",
+    "orange",
+    "sunset_purple",
+    "black",
+    "white",
+    "scarlet_red",
+    "solar_yellow",
+    "forest_green",
+    "verdant_green",
+
+    { "id": "burgundy",        "class": "custom" },
+    { "id": "fire_red",        "class": "custom" },
+    { "id": "carbon_gray",     "class": "custom" },
+    { "id": "gray",            "class": "custom" },
+    { "id": "steel_gray",      "class": "custom" },
+    { "id": "dusted_mica",     "class": "custom" },
+    { "id": "light_brown",     "class": "custom" },
+    { "id": "shale_green",     "class": "custom" },
+    { "id": "forest_green",    "class": "custom" },
+    { "id": "opal_green",      "class": "custom" },
+    { "id": "bermuda_blue",    "class": "custom" },
+    { "id": "pleasant_blue",   "class": "custom" },
+    { "id": "brilliant_blue",  "class": "custom" },
+    { "id": "midnight_pearl",  "class": "custom" },
+    { "id": "seafoam_green",   "class": "custom" },
+    { "id": "sunset_purple",   "class": "custom" }
+  ]
+}
