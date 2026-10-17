@@ -1,0 +1,100 @@
+{
+"pigeon_brake_F_3w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Drum Brake",
+        "value":80,
+    },
+    "slotType" : "pigeon_brake_F_3w",
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",    "description"],
+        ["brakepad_F", ["brakepad_F"], [],          "brakepad_F", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pigeon_brakedrum_F_3w", ["wheel_F","wheelhub_F"]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"brakeTorque":"$=$brakestrength*650"},
+        {"parkingTorque":0},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.17},
+        {"brakeMass":2.0},
+        {"brakeType":"drum"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"pigeon_brake_F_4w": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Drum Brakes",
+        "value":100,
+    },
+    "slotType" : "pigeon_brake_F_4w",
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",    "description"],
+        ["brakepad_F", ["brakepad_F"], [],          "brakepad_F", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pigeon_brakedrum_FR_4w", ["wheel_FR","wheelhub_FR"]],
+        ["pigeon_brakedrum_FL_4w", ["wheel_FL","wheelhub_FL"]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"brakeTorque":"$=$brakestrength*400"},
+        {"parkingTorque":0},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.14},
+        {"brakeMass":2.0},
+        {"brakeType":"drum"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+"pigeon_brake_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Drum Brakes",
+        "value":100,
+    },
+    "slotType" : "pigeon_brake_R",
+    "slots2": [
+        ["name",       "allowTypes",   "denyTypes", "default",    "description"],
+        ["brakepad_R", ["brakepad_R"], [],          "brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pigeon_brakedrum_RR", ["wheel_RR","wheelhub_RR"], [] , {"pos":{"x":-0.001, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        ["pigeon_brakedrum_RL", ["wheel_RL","wheelhub_RL"], [] , {"pos":{"x":0.001, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"brakeTorque":"$=$brakestrength*220"},
+        {"parkingTorque":750},
+        {"brakeSpring":100},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.14},
+        {"brakeMass":2.0},
+        {"brakeType":"drum"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+}

@@ -1,0 +1,220 @@
+{
+"pigeon_i4_transmission_5M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Speed Manual Transmission",
+        "value":400,
+    },
+    "slotType" : "pigeon_i4_transmission",
+    "slots2": [
+        ["name",               "allowTypes",           "denyTypes", "default",            "description"],
+        ["pigeon_i4_flywheel", ["pigeon_i4_flywheel"], [],          "pigeon_i4_flywheel", "Flywheel",    {"coreSlot":true}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":[-3.466, 0, 3.65, 1.95, 1.36, 1.00, 0.795],
+        "friction":0.57,
+        "dynamicFriction":0.00055,
+        "torqueLossCoef": 0.0155,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.60, 0.00, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in_tuned",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out_tuned",
+
+        "forwardInputPitchCoef":0.95
+        "forwardOutputPitchCoef":0.95
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.15,
+        "transmissionShiftDelay":0.15,
+        "lowShiftDownRPM":[0,0,0,1500,1700,1900,1900],
+        "lowShiftUpRPM":[0,0,3700,3200,3000,3000],
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pigeon_i4_transmission", ["pigeon_engine","pigeon_transmission"]],
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         //--5 Speed Manual--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pigeon_transmission"},
+         {"nodeWeight":13},
+         ["tra1", 0.0,   -0.1,    0.31],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8001000,"beamDamp":150},
+          {"beamDeform":100000,"beamStrength":"FLT_MAX"},
+          //transmission
+          ["tra1", "e1r"],
+          ["tra1", "e3r"],
+          ["tra1", "e1l"],
+          ["tra1", "e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e1l",  "e1r",  "tra1"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+},
+"pigeon_i4_transmission_5M_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race 5-Speed Manual Transmission",
+        "value":3650,
+    },
+    "slotType" : "pigeon_i4_transmission",
+    "slots2": [
+        ["name",               "allowTypes",           "denyTypes", "default",            "description"],
+        ["pigeon_i4_flywheel", ["pigeon_i4_flywheel"], [],          "pigeon_i4_flywheel", "Flywheel",    {"coreSlot":true}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$gear_R", "range", ":1", "Transmission", 3.48, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_1", "range", ":1", "Transmission", 2.63, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_2", "range", ":1", "Transmission", 1.89, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_3", "range", ":1", "Transmission", 1.38, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_4", "range", ":1", "Transmission", 1.00, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_5", "range", ":1", "Transmission", 0.86, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["manualGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5"],
+        "friction": 0.85,
+        "dynamicFriction": 0.00086,
+        "torqueLossCoef": 0.0132,
+        "gearboxNode:":["tra1"],
+
+        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "clutchFreePlay":0.3,
+    },
+    "vehicleController": {
+        "calculateOptimalLoadShiftPoints": true,
+        "transmissionShiftDelay":0.11,
+        "shiftDownRPMOffsetCoef":1.2,
+        "aggressionHoldOffThrottleDelay":3,
+        "lowShiftDownRPM":[0,0,0,2000,2500,2400,2400],
+        "lowShiftUpRPM":[0,0,4200,3800,3800,3800],
+       //"wheelSlipUpThreshold":75,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["pigeon_i4_transmission", ["pigeon_engine","pigeon_transmission"]],
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         //--5 Speed Manual--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"group":"pigeon_transmission"},
+         {"nodeWeight":14.5},
+         ["tra1", 0.0,   -0.1,    0.31],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":8001000,"beamDamp":150},
+          {"beamDeform":100000,"beamStrength":"FLT_MAX"},
+          //transmission
+          ["tra1", "e1r"],
+          ["tra1", "e3r"],
+          ["tra1", "e1l"],
+          ["tra1", "e3l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e1l",  "e1r",  "tra1"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+},
+"pigeon_i4_flywheel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Flywheel",
+        "value":125,
+    },
+    "slotType" : "pigeon_i4_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.055,
+    },
+},
+"pigeon_i4_flywheel_light": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lightened Flywheel",
+        "value":175,
+    },
+    "slotType" : "pigeon_i4_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.032,
+    },
+},
+"pigeon_i4_flywheel_ultralight": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ultra Lightweight Flywheel",
+        "value":275,
+    },
+    "slotType" : "pigeon_i4_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.011,
+    },
+},
+}
