@@ -1,0 +1,617 @@
+{
+"scintilla_sparetire_holder":
+{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Spare Tire Holder",
+        "value":400,
+    },
+
+    "slotType" :"scintilla_hood",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["scintilla_front_tire_holder", ["scintilla_sparetire_holder"]],
+    ],
+    "slots2": [
+        ["name",                 "allowTypes",             "denyTypes", "default",                        "description"],
+        ["scintilla_sparewheel", ["scintilla_sparewheel"], [],          "scintilla_sparewheel_38b_18x10", "Spare Wheel"],
+
+    ],
+    "nodes":[
+         ["id",     "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"selfCollision":true},
+         {"collision":true},
+         //spare tire holder
+         {"nodeWeight":1.6},
+         {"group":"scintilla_sparetire_holder"},
+         ["spth1",  0.0,   -1.886,  0.665,  {"selfCollision":false}],
+         ["spth2",  0.0,   -1.886,  0.45,   {"selfCollision":false}],
+         {"nodeWeight":0.7},
+         ["spth3l", 0.38,  -1.786,  0.43],
+         ["spth3r",-0.38,  -1.786,  0.43],
+         ["spth4l", 0.38,  -1.986,  0.43],
+         ["spth4r",-0.38,  -1.986,  0.43],
+
+         {"group":""},
+        ],
+
+    "beams":[
+          ["id1:",   "id2:"],
+          //--EXPANSION DEFORM LIMIT DEFAULT--
+          {"deformLimitExpansion":1.2},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":801000,"beamDamp":125},
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          //main shape
+          ["spth1",  "spth2"],
+          ["spth1",  "spth3r"],
+          ["spth1",  "spth3l"],
+          ["spth2",  "spth3r"],
+          ["spth2",  "spth3l"],
+          ["spth1",  "spth4r"],
+          ["spth1",  "spth4l"],
+          ["spth2",  "spth4r"],
+          ["spth2",  "spth4l"],
+          ["spth3l", "spth3r"],
+          ["spth4l", "spth4r"],
+          ["spth3l", "spth4l"],
+          ["spth3r", "spth4r"],
+          ["spth3l", "spth4r"],
+          ["spth3r", "spth4l"],
+          //attach
+          {"beamSpring":501000,"beamDamp":75},
+          {"beamDeform":4000,"beamStrength":73000},
+          {"breakGroup":"sparetire_holder_L"},
+          ["spth3l", "bbf2l"],
+          ["spth3l", "bbf1l"],
+          ["spth3l", "fx3l"],
+          ["spth3l", "fx1l"],
+          ["spth4l", "bbf2l"],
+          ["spth4l", "bbf1l"],
+          ["spth4l", "fx3l"],
+          ["spth4l", "fx1l"],
+          {"breakGroup":"sparetire_holder_R"},
+          ["spth3r", "bbf2r"],
+          ["spth3r", "bbf1r"],
+          ["spth3r", "fx3r"],
+          ["spth3r", "fx1r"],
+          ["spth4r", "bbf2r"],
+          ["spth4r", "bbf1r"],
+          ["spth4r", "fx3r"],
+          ["spth4r", "fx1r"],
+          //weaker
+          {"beamSpring":501000,"beamDamp":55},
+          {"beamDeform":2000,"beamStrength":73000},
+          {"breakGroup":"sparetire_holder_L"},
+          ["spth1",  "bbf2l"],
+          ["spth1",  "bbf1l"],
+          ["spth1",  "fx3l"],
+          ["spth1",  "fx1l"],
+
+          ["spth2",  "bbf2l"],
+          ["spth2",  "bbf1l"],
+          ["spth2",  "fx3l"],
+          ["spth2",  "fx1l"],
+          {"breakGroup":"sparetire_holder_R"},
+          ["spth1",  "bbf2r"],
+          ["spth1",  "bbf1r"],
+          ["spth1",  "fx3r"],
+          ["spth1",  "fx1r"],
+
+          ["spth2",  "bbf2r"],
+          ["spth2",  "bbf1r"],
+          ["spth2",  "fx3r"],
+          ["spth2",  "fx1r"],
+          {"breakGroup":""},
+          //bleed through
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"deformLimitExpansion":1.2},
+    ],
+
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"triangleType":"NORMALTYPE"},
+        {"groundModel":"metal"},
+
+        //frunk
+        {"dragCoef":10.32},
+        {"group":"scintilla_sparetire_holder"},
+
+        {"group":""},
+        ],
+},
+"scintilla_sparewheel_dreid_c70_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND C70-2 Spare Wheel",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.Dreid",
+                    }
+                },
+                "color":"ui.vehicleconfig.information.color.Colorable",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_dreid_c70_18x11", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_11a_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND Spare Wheel",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.Folk ET73",
+                    }
+                },
+                "color":"ui.vehicleconfig.information.color.White",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_11a_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_11b_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND Spare Wheel",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.Folk ET73",
+                    }
+                },
+                "color":"ui.vehicleconfig.information.color.Black",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_11b_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_02a_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND ZT55 Deep Spare Wheel",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.Folk",
+                    }
+                },
+                "color":"ui.vehicleconfig.information.color.Silver",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_02a_18x10_deep", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_02b_18x10_alt": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND ZT55 Deep Spare Wheel",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.Folk",
+                    }
+                },
+                "color":"ui.vehicleconfig.information.color.Black",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_02b_18x10_deep", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_07a_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"18x10",
+                "type":"ui.vehicleconfig.information.type.Clockwise 533 Spare Wheel",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_07a_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_34a_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":"ui.vehicleconfig.information.type.Wangan-2P Spare Wheel",
+                "color":"ui.vehicleconfig.information.color.Gray",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_34a_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_34b_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelName",
+            "ctx":{
+                "size":"18x10",
+                "type":"ui.vehicleconfig.information.type.Wangan-2P Spare Wheel",
+                "color":"ui.vehicleconfig.information.color.Bronze",
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_34b_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_38a_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Kodaira 18x10 Spare Wheel (Chrome)",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.TIMS"
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_39a_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_38b_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Kodaira 18x10 Spare Wheel (White)",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.TIMS"
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_39b_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparewheel_38c_18x10": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Kodaira 18x10 Spare Wheel (Black)",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.TIMS"
+            }
+        },
+        "value":550,
+    },
+    "slotType" : "scintilla_sparewheel",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["wheel_39c_18x10", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "slots2": [
+        ["name",                      "allowTypes",                  "denyTypes", "default",                      "description"],
+        ["scintilla_sparetire_18x10", ["scintilla_sparetire_18x10"], [],          "scintilla_sparetire_18x10_33", "Spare Tire",  {"coreSlot":true}],
+    ],
+},
+"scintilla_sparetire_18x10_33": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.tireName",
+            "ctx":{
+                "size":"33x12.50R18",
+                "type":"ui.vehicleconfig.information.type.All-Terrain Spare Tire",
+            }
+        },
+        "value":200,
+    },
+    "slotType" : "scintilla_sparetire_18x10",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        //["scintilla_sparecover","","Spare Wheel Cover"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["offroadtire_02a_18x10_33", ["scintilla_sparetire"], [], {"pos":{"x":0.0, "y":-1.8783, "z":0.6066}, "rot":{"x":0, "y":-90, "z":0}, "scale":{"x":1.0, "y":1.05, "z":1.05}}],
+    ],
+    "nodes": [
+         ["id",    "posX",  "posY",  "posZ"],
+         {"group":"scintilla_sparetire"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeMaterial":"|NM_RUBBER"},
+         {"frictionCoef":1.1},
+         {"nodeWeight":2.1},
+         ["spt0", -0.00550,-1.87947, 0.55],
+
+         ["spt2r",-0.45402,-1.87862, 0.75100],
+         ["spt1", -0.21950,-1.50881, 0.75100],
+         ["spt1l", 0.22668,-1.48562, 0.75100],
+         ["spt3r",-0.23768,-2.27333, 0.75100],
+         ["spt3l", 0.21950,-2.26919, 0.75100],
+         ["spt2l", 0.45168,-1.87533, 0.75100],
+         {"selfCollision":false},
+         ["spt5r",-0.45402,-1.87862, 0.46100, {"selfCollision":false}],
+         ["spt4r",-0.21950,-1.50881, 0.46100],
+         ["spt4l", 0.22668,-1.48562, 0.46100],
+         ["spt6r",-0.22902,-2.26833, 0.46100, {"selfCollision":false}],
+         ["spt6l", 0.21950,-2.26919, 0.46100, {"selfCollision":false}],
+         ["spt5l", 0.45168,-1.87533, 0.46100, {"selfCollision":false}],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:",   "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":501000,"beamDamp":200},
+          {"beamDeform":32400,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+          ["spt2r",  "spt1"],
+          ["spt1l",  "spt1"],
+          ["spt3r",  "spt3l"],
+          ["spt2l",  "spt3l"],
+          ["spt3r",  "spt2r"],
+          ["spt2l",  "spt1l"],
+          ["spt5r",  "spt4r"],
+          ["spt4l",  "spt4r"],
+          ["spt6r",  "spt6l"],
+          ["spt5l",  "spt6l"],
+          ["spt6r",  "spt5r"],
+          ["spt5l",  "spt4l"],
+
+          ["spt2r",  "spt5r"],
+          ["spt1",   "spt4r"],
+          ["spt1l",  "spt4l"],
+          ["spt3r",  "spt6r"],
+          ["spt3l",  "spt6l"],
+          ["spt2l",  "spt5l"],
+
+          //cross
+          ["spt2r",  "spt4r"],
+          ["spt2r",  "spt6r"],
+          ["spt1",   "spt6r"],
+          ["spt1",   "spt5l"],
+          ["spt1l",  "spt4r"],
+          ["spt1l",  "spt5l"],
+
+          ["spt3r",  "spt5r"],
+          ["spt3r",  "spt6l"],
+          ["spt3l",  "spt5r"],
+          ["spt3l",  "spt4l"],
+          ["spt2l",  "spt4l"],
+          ["spt2l",  "spt6l"],
+
+          //attach to center node
+          ["spt0",   "spt2r"],
+          ["spt0",   "spt1"],
+          ["spt0",   "spt1l"],
+          ["spt0",   "spt3r"],
+          ["spt0",   "spt3l"],
+          ["spt0",   "spt2l"],
+          ["spt0",   "spt5r"],
+          ["spt0",   "spt4r"],
+          ["spt0",   "spt4l"],
+          ["spt0",   "spt6r"],
+          ["spt0",   "spt6l"],
+          ["spt0",   "spt5l"],
+
+          //attach to holder
+          {"beamSpring":801000,"beamDamp":30},
+          {"beamDeform":16800,"beamStrength":30000},
+          {"breakGroup":"sparetire"},
+          {"optional":true},
+          ["spt0",   "spth1"],
+          ["spt0",   "spth2"],
+
+          ["spt5l",  "spth1"],
+          ["spt6r",  "spth1"],
+          ["spt4l",  "spth1"],
+          ["spt5r",  "spth1"],
+          ["spt2l",  "spth1"],
+          ["spt3r",  "spth1"],
+          ["spt1l",  "spth1"],
+          ["spt2r",  "spth1"],
+
+          ["spt5l",  "spth2"],
+          ["spt6r",  "spth2"],
+          ["spt4l",  "spth2"],
+          ["spt5r",  "spth2"],
+          ["spt2l",  "spth2"],
+          ["spt3r",  "spth2"],
+          ["spt1l",  "spth2"],
+          ["spt2r",  "spth2"],
+
+
+          ["spt5l",  "spth3r"],
+          ["spt6r",  "spth3l"],
+          ["spt4l",  "spth3r"],
+          ["spt5r",  "spth3l"],
+          ["spt2l",  "spth3r"],
+          ["spt3r",  "spth3l"],
+          ["spt1l",  "spth3r"],
+          ["spt2r",  "spth3l"],
+
+          //extra
+          {"beamSpring":401000,"beamDamp":30},
+          ["spt1l",  "fx1l"],
+          ["spt1l",  "fx1r"],
+          ["spt1",   "fx1r"],
+          ["spt1",   "fx1l"],
+          ["spt2l",  "fx1l"],
+          ["spt2l",  "bbf1l"],
+          ["spth3r", "bbf1l"],
+          ["spt3l",  "bbf1r"],
+          ["spt3r",  "bbf1r"],
+          ["spt3r",  "bbf1l"],
+          ["spt2r",  "fx1r"],
+          ["spt2r",  "bbf1r"],
+          {"optional":false},
+          {"breakGroup":""},
+
+          {"beamType":"|SUPPORT","beamLongBound":5},
+          {"beamSpring":501000,"beamDamp":30},
+          {"beamDeform":12000,"beamStrength":20000},
+          {"breakGroup":"sparetire_supportBeams"},
+          ["spt1",   "fx1r"],
+          ["spt1",   "fx1l"],
+          ["spt1l",  "fx1l"],
+          ["spt1l",  "fx1r"],
+          ["spt3r",  "bbf1r"],
+          ["spt3l",  "bbf1l"],
+          ["spt3l",  "bbf1"],
+          ["spt3r",  "bbf1"],
+          ["spt2r",  "bbf1r"],
+          ["spt2r",  "fx1r"],
+          ["spt2l",  "bbf1l"],
+          ["spt2l",  "fx1l"],
+          ["spt5l",  "fx3l"],
+          ["spt2l",  "fx3l"],
+          ["spt2r",  "fx3r"],
+          ["spt5r",  "fx3r"],
+          ["spt4r",  "fx4r"],
+          ["spt1",   "fx4r"],
+          ["spt4l",  "fx4l"],
+          ["spt1l",  "fx4l"],
+          ["spt1l",  "fx4r"],
+          ["spt1",   "fx4l"],
+          ["spt1l",  "f6l"],
+          ["spt1l",  "f6r"],
+          ["spt1",   "f6r"],
+          ["spt1",   "f6l"],
+          ["spt2l",  "f6l"],
+          ["spt2r",  "f6r"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+          ["id1:",  "id2:",  "id3:"],
+          {"groundModel":"plastic"},
+          {"group":"scintilla_sparetire"},
+          {"dragCoef":8.6},
+          ["spt6l", "spt5l", "spt2l"],
+          ["spt6l", "spt2l", "spt3l"],
+          ["spt6l", "spt3r", "spt6r"],
+          ["spt6l", "spt3l", "spt3r"],
+          ["spt5l", "spt4l", "spt1l"],
+          ["spt5l", "spt1l", "spt2l"],
+          ["spt5r", "spt6r", "spt2r"],
+          ["spt6r", "spt3r", "spt2r"],
+          ["spt4r", "spt5r", "spt2r"],
+          ["spt4r", "spt2r", "spt1"],
+          ["spt4r", "spt1l", "spt4l"],
+          ["spt4r", "spt1",  "spt1l"],
+
+          //
+          ["spt3l", "spt2l", "spt3r"],
+          ["spt2l", "spt1l", "spt2r"],
+          ["spt2l", "spt2r", "spt3r"],
+          ["spt2r", "spt1l", "spt1"],
+
+          ["spt6l", "spt6r", "spt5l"],
+          ["spt6r", "spt5r", "spt4l"],
+          ["spt6r", "spt4l", "spt5l"],
+          ["spt4l", "spt5r", "spt4r"],
+          {"dragCoef":0},
+    ],
+},
+}

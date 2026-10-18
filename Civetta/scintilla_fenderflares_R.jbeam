@@ -1,0 +1,52 @@
+{
+"scintilla_fenderflare_RR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Right Fender Flare",
+        "value":350,
+    },
+    "slotType" : "scintilla_fenderflare_RR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_RR", ["scintilla_quarterpanel_R"]],
+    ],
+    "nodes": [
+         ["id",  "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.1},
+         {"group":["scintilla_quarterpanel_R", "scintilla_innerfender_RR"]}
+         ["q4r",-1.03,   0.97,   0.556],
+         ["q5r",-1.03,   1.242,  0.735],
+         ["q6r",-1.03,   1.521,  0.695],
+    ],
+},
+"scintilla_fenderflare_RL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Left Fender Flare",
+        "value":350,
+    },
+    "slotType" : "scintilla_fenderflare_RL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_RL", ["scintilla_quarterpanel_L"]],
+    ],
+    "nodes": [
+         ["id",  "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.1},
+         {"group":["scintilla_quarterpanel_L", "scintilla_innerfender_RL"]}
+         ["q4l", 1.03,   0.97,   0.556],
+         ["q5l", 1.03,   1.242,  0.735],
+         ["q6l", 1.03,   1.521,  0.695],
+    ],
+},
+}

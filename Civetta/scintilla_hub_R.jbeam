@@ -1,0 +1,152 @@
+{
+"scintilla_hub_R_5": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"5-Lug Rear Wheel Hubs",
+        "value":900,
+    },
+    "slotType" : "scintilla_hub_R",
+    "slots2": [
+        ["name",                  "allowTypes",              "denyTypes", "default",                         "description"],
+        ["scintilla_brake_R",     ["scintilla_brake_R"],     [],          "scintilla_brake_R",               "Rear Brakes"],
+        //To change the base track width, edit the trackoffset_R offset in the expression.
+        ["wheel_R_5",             ["wheel_R_5"],             [],          "wheel_civetta_scintilla_20x11_R", "Rear Wheels",   {"nodeOffset":{"x":"$=$trackoffset_R+0.34", "y":1.320, "z":0.3476}}],
+        ["scintilla_wheeldata_R", ["scintilla_wheeldata_R"], [],          "scintilla_wheeldata_R",           "Rear Spindles", {"coreSlot":true}],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":6.58},
+         {"group":"wheelhub_RR"},
+         ["rw1r", -0.81,   1.320,  0.3476],
+         ["rw1rr",-0.95,   1.320,  0.3476],
+         {"group":"wheelhub_RL"},
+         ["rw1l",  0.81,   1.320,  0.3476],
+         ["rw1ll", 0.95,   1.320,  0.3476],
+         {"group":""},
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["scintilla_hub_spindle_RR",["wheel_RR","wheelhub_RR"],[]],
+        ["scintilla_hub_spindle_RL",["wheel_RL","wheelhub_RL"],[]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+        //hub
+        //general settings
+        {"hubRadius":0.08},
+        {"wheelOffset":-0.01},
+        {"hubWidth":0.10},
+        {"numRays":5},
+
+        //hub options
+        {"hubTreadBeamSpring":364940, "hubTreadBeamDamp":5.64},
+        {"hubPeripheryBeamSpring":364940, "hubPeripheryBeamDamp":5.64},
+        {"hubSideBeamSpring":828940, "hubSideBeamDamp":5.64},
+        {"hubNodeWeight":0.7},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.2},
+        {"hubBeamDeform":45500, "hubBeamStrength":87500},
+    ],
+},
+"scintilla_hub_R_centerlug": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Center Lug Rear Wheel Hubs",
+        "value":1600,
+    },
+    "slotType" : "scintilla_hub_R",
+    "slots2": [
+        ["name",                  "allowTypes",              "denyTypes", "default",                   "description"],
+        ["scintilla_brake_R",     ["scintilla_brake_R"],     [],          "scintilla_brake_R",         "Rear Brakes"],
+        //To change the base track width, edit the trackoffset_R offset in the expression.
+        ["wheel_R_centerlug",     ["wheel_R_centerlug"],     [],          "civetta_wheel_02c_18x12_R", "Rear Wheels",   {"nodeOffset":{"x":"$=$trackoffset_R+0.36", "y":1.320, "z":0.3476}}],
+        ["scintilla_wheeldata_R", ["scintilla_wheeldata_R"], [],          "scintilla_wheeldata_R",     "Rear Spindles", {"coreSlot":true}],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":6.58},
+         {"group":"wheelhub_RR"},
+         ["rw1r", -0.81,   1.320,  0.3476],
+         ["rw1rr",-0.95,   1.320,  0.3476],
+         {"group":"wheelhub_RL"},
+         ["rw1l",  0.81,   1.320,  0.3476],
+         ["rw1ll", 0.95,   1.320,  0.3476],
+         {"group":""},
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        {"disableMeshBreaking":false,"disableHubMeshBreaking":false,"enableHubcaps":false,"hasTire":false},
+        //hub
+        //general settings
+        {"hubRadius":0.08},
+        {"wheelOffset":-0.01},
+        {"hubWidth":0.10},
+        {"numRays":5},
+
+        //hub options
+        {"hubTreadBeamSpring":364940, "hubTreadBeamDamp":5.64},
+        {"hubPeripheryBeamSpring":364940, "hubPeripheryBeamDamp":5.64},
+        {"hubSideBeamSpring":828940, "hubSideBeamDamp":5.64},
+        {"hubNodeWeight":0.7},
+        {"hubNodeMaterial":"|NM_METAL"},
+        {"hubFrictionCoef":0.2},
+        {"hubBeamDeform":45500, "hubBeamStrength":87500},
+    ],
+},
+"scintilla_wheeldata_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Spindles",
+        "value":0,
+    },
+    "slotType" : "scintilla_wheeldata_R",
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //rear
+        {"selfCollision":false},
+        {"collision":true},
+        {"hubcapBreakGroup":"hubcap_RR"},
+        {"hubcapGroup":"hubcap_RR"},
+        {"axleBeams":["axle_RR"]},
+        ["RR", "wheel_RR", "tire_RR", "rw1rr", "rw1r", 9999, "rh6r", 1, {"torqueCoupling:":"rdiff", "torqueArm:":"tra2", "torqueArm2:":"tra2l"}],
+        {"hubcapBreakGroup":"hubcap_RL"},
+        {"hubcapGroup":"hubcap_RL"},
+        {"axleBeams":["axle_RL"]},
+        ["RL", "wheel_RL", "tire_RL", "rw1ll", "rw1l", 9999, "rh6l", -1, {"torqueCoupling:":"rdiff", "torqueArm:":"tra2", "torqueArm2:":"tra2r"}],
+        {"selfCollision":true},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"enableHubcaps":false},
+        {"enableTireLbeams":false},
+        {"enableTreadReinfBeams":false},
+        {"enableTireReinfBeams":false},
+        {"enableTreadReinfBeams":false},
+        {"enableTirePeripheryReinfBeams":false},
+        {"loadSensitivitySlope":""},
+        {"noLoadCoef":""},
+        {"fullLoadCoef":""},
+        {"frictionCoef":""},
+        {"slidingFrictionCoef":""},
+        {"softnessCoef":0.5},
+        {"treadCoef":1.0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "spindleRL", "wheelaxleRL", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "uiName":"Rear Left Axle", "friction":1.16, "dynamicFriction":0.00362}],
+        ["shaft", "spindleRR", "wheelaxleRR", 1, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "uiName":"Rear Right Axle", "friction":1.16, "dynamicFriction":0.00362}],
+    ],
+},
+}

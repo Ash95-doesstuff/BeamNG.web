@@ -1,0 +1,528 @@
+{
+"scintilla_spoiler": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Active Rear Spoiler",
+        "value":4000,
+    },
+    "slotType" : "scintilla_spoiler",
+    "slots2": [
+        ["name",            "allowTypes",        "denyTypes", "default",         "description"],
+        ["scintilla_chmsl", ["scintilla_chmsl"], [],          "scintilla_chmsl", "Center Hight Mounted Stop Light"],
+    ],
+    "controller": [
+        ["fileName"],
+        ["spoiler", {}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_rear_spoiler", ["scintilla_spoiler"]],
+         ["scintilla_piston_b", ["scintilla_spoiler_rearstrut"]],
+         ["scintilla_piston_a", ["scintilla_spoiler_frontstrut"]],
+         ["scintilla_chmsl_backing_stock", ["scintilla_spoiler"]],
+    ],
+    "rails": {
+        //struts
+        "spoiler_rearstrut_R_upper":{"links:":["sp3r", "sp4r"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_rearstrut_L_upper":{"links:":["sp3l", "sp4l"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_rearstrut_R_lower":{"links:":["sp7r", "sp8r"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_rearstrut_L_lower":{"links:":["sp7l", "sp8l"], "broken:":[], "looped":false, "capped":true},
+
+        "spoiler_frontstrut_R_upper":{"links:":["sp5r", "sp6r"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_frontstrut_L_upper":{"links:":["sp5l", "sp6l"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_frontstrut_R_lower":{"links:":["sp9r", "sp10r"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_frontstrut_L_lower":{"links:":["sp9l", "sp10l"], "broken:":[], "looped":false, "capped":true},
+
+        //sliders
+        "spoiler_slider_R_upper":{"links:":["sp5r", "sp11r"], "broken:":[], "looped":false, "capped":true},
+        "spoiler_slider_L_upper":{"links:":["sp5l", "sp11l"], "broken:":[], "looped":false, "capped":true},
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        //struts
+        ["sp8r", "spoiler_rearstrut_R_upper",  true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp8l", "spoiler_rearstrut_L_upper",  true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp3r", "spoiler_rearstrut_R_lower",  true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp3l", "spoiler_rearstrut_L_lower",  true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp10r","spoiler_frontstrut_R_upper", true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp10l","spoiler_frontstrut_L_upper", true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp6r", "spoiler_frontstrut_R_lower", true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        ["sp6l", "spoiler_frontstrut_L_lower", true, true, 0.0, 1201000, "FLT_MAX", "FLT_MAX"],
+        //sliders
+        ["sp4r", "spoiler_slider_R_upper", true, true, 0.0, 501000, "FLT_MAX", "FLT_MAX"],
+        ["sp4l", "spoiler_slider_L_upper", true, true, 0.0, 501000, "FLT_MAX", "FLT_MAX"],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+
+         //--SPOILER--
+         {"group":"scintilla_spoiler"},
+         {"nodeWeight":0.4},
+         ["sp2r", -0.516,  1.78,   0.935],
+         ["sp2",   0.0,    1.902,  0.928],
+         ["sp2l",  0.516,  1.78,   0.935],
+
+         ["sp1rr",-0.813,  1.867,  0.849],
+         ["sp1r", -0.464,  2.088,  0.925],
+         ["sp1",   0.0,    2.158,  0.945],
+         ["sp1l",  0.464,  2.088,  0.925],
+         ["sp1ll", 0.813,  1.867,  0.849],
+         {"group":""},
+
+         //rigidifier
+         {"nodeWeight":0.7},
+         {"collision":false, "selfCollision":false}
+         ["sp3rr",-0.28,   1.869,  0.7],
+         ["sp3ll", 0.28,   1.869,  0.7],
+
+         //strut upper
+         {"collision":true, "selfCollision":false}
+         {"nodeWeight":0.6},
+         ["sp3r", -0.28,   1.85,   0.627,  {"group":"scintilla_spoiler_rearstrut"}],
+         ["sp3l",  0.28,   1.85,   0.627,  {"group":"scintilla_spoiler_rearstrut"}],
+
+         ["sp4r", -0.28,   1.964,  0.881,  {"group":"scintilla_spoiler_rearstrut"}],
+         ["sp4l",  0.28,   1.964,  0.881,  {"group":"scintilla_spoiler_rearstrut"}],
+
+         ["sp5r", -0.28,   1.855,  0.881,  {"group":"scintilla_spoiler_frontstrut"}],
+         ["sp5l",  0.28,   1.855,  0.881,  {"group":"scintilla_spoiler_frontstrut"}],
+
+         ["sp6r", -0.28,   1.74,   0.627,  {"group":"scintilla_spoiler_frontstrut"}],
+         ["sp6l",  0.28,   1.74,   0.627,  {"group":"scintilla_spoiler_frontstrut"}],
+         {"group":""},
+
+         //strut lower
+         ["sp7r", -0.28,   1.835,  0.597],
+         ["sp7l",  0.28,   1.835,  0.597],
+
+         ["sp8r", -0.28,   1.953,  0.859],
+         ["sp8l",  0.28,   1.953,  0.859],
+
+         ["sp9r", -0.28,   1.726,  0.597],
+         ["sp9l",  0.28,   1.726,  0.597],
+
+         ["sp10r",-0.28,   1.844,  0.859],
+         ["sp10l", 0.28,   1.844,  0.859],
+
+         //slider
+         ["sp11r",-0.28,   2.1,    0.881],
+         ["sp11l", 0.28,   2.1,    0.881],
+    ],
+
+    "beams": [
+          ["id1:",  "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //spoiler main shape
+          {"beamSpring":401000,"beamDamp":20},
+          {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          {"deformGroup":"chmsl_break", "deformationTriggerRatio":0.01}
+          ["sp2l",  "sp2"],
+          ["sp2",   "sp2r"],
+          ["sp2r",  "sp1rr"],
+          ["sp2l",  "sp1ll"],
+          ["sp2l",  "sp1l"],
+          ["sp2",   "sp1"],
+          ["sp2r",  "sp1r"],
+          ["sp1rr", "sp1r"],
+          ["sp1",   "sp1l"],
+          ["sp1",   "sp1r"],
+          ["sp1l",  "sp1ll"],
+
+          //surface cross
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["sp1l",  "sp2"],
+          ["sp1",   "sp2l"],
+          ["sp1",   "sp2r"],
+          ["sp1r",  "sp2"],
+
+          //rigids
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          ["sp2l",  "sp2r"],
+          ["sp1rr", "sp1"],
+          ["sp1",   "sp1ll"],
+          ["sp1l",  "sp1r"],
+
+          //rigidifier
+          ["sp3ll", "sp2l"],
+          ["sp3ll", "sp1l"],
+          ["sp3ll", "sp1ll"],
+          ["sp3ll", "sp2"],
+          ["sp3ll", "sp1"],
+          ["sp3ll", "sp2r"],
+          ["sp3ll", "sp1r"],
+          ["sp3rr", "sp2r"],
+          ["sp3rr", "sp1r"],
+          ["sp3rr", "sp1rr"],
+          ["sp3rr", "sp2"],
+          ["sp3rr", "sp1"],
+          ["sp3rr", "sp2l"],
+          ["sp3rr", "sp1l"],
+          ["sp3rr", "sp3ll"],
+          {"deformGroup":"", "deformationTriggerRatio":""}
+
+          //--STRUTS--
+
+          //upper
+          {"beamSpring":501000,"beamDamp":20},
+          {"beamDeform":17000,"beamStrength":"FLT_MAX"},
+          ["sp6r",  "sp5r"],
+          ["sp6l",  "sp5l"],
+          ["sp5l",  "sp5r"],
+          ["sp6r",  "sp6l"],
+          ["sp4r",  "sp3r"],
+          ["sp4l",  "sp3l"],
+          ["sp3r",  "sp3l"],
+          ["sp4r",  "sp4l"],
+          ["sp4l",  "sp3r"],
+          ["sp4r",  "sp3l"],
+          ["sp5r",  "sp6l"],
+          ["sp5l",  "sp6r"],
+
+          //lower
+          ["sp8r",  "sp10r"],
+          ["sp10r", "sp9r"],
+          ["sp9r",  "sp7r"],
+          ["sp7r",  "sp8r"],
+          ["sp8l",  "sp10l"],
+          ["sp10l", "sp9l"],
+          ["sp9l",  "sp7l"],
+          ["sp7l",  "sp8l"],
+          ["sp8l",  "sp9l"],
+          ["sp10l", "sp7l"],
+          ["sp10r", "sp7r"],
+          ["sp8r",  "sp9r"],
+          ["sp9r",  "sp9l"],
+          ["sp10l", "sp10r"],
+          ["sp8r",  "sp8l"],
+          ["sp7r",  "sp7l"],
+          ["sp7l",  "sp8r"],
+          ["sp8l",  "sp7r"],
+          ["sp9r",  "sp10l"],
+          ["sp9l",  "sp10r"],
+          ["sp9r",  "sp7l"],
+          ["sp9l",  "sp7r"],
+          ["sp10r", "sp8l"],
+          ["sp10l", "sp8r"],
+          ["sp8r",  "sp9l"],
+          ["sp10r", "sp7l"],
+          ["sp9r",  "sp8l"],
+          ["sp10l", "sp7r"],
+
+          //spoiler slider
+          ["sp11r", "sp5r"],
+          ["sp11l", "sp5l"],
+          ["sp11r", "sp11l"],
+          ["sp11l", "sp5r"],
+          ["sp11r", "sp5l"],
+
+          //spoiler attach
+          {"beamSpring":301000,"beamDamp":20},
+          {"beamDeform":12000,"beamStrength":60000},
+          {"deformGroup":"chmsl_break", "deformationTriggerRatio":0.01}
+          {"breakGroup":"spoiler_R"},
+          ["sp11r", "sp1r"],
+          ["sp11r", "sp2r"],
+          ["sp11r", "sp2"],
+          ["sp11r", "sp1"],
+          ["sp3rr", "sp11r"],
+          ["sp3rr", "sp11l"],
+          ["sp5r",  "sp1r"],
+          ["sp5r",  "sp2r"],
+          ["sp5r",  "sp2"],
+          ["sp5r",  "sp1"],
+          ["sp3rr", "sp5r"],
+          ["sp3rr", "sp5l"],
+          {"breakGroup":"spoiler_L"},
+          ["sp11l", "sp1l"],
+          ["sp11l", "sp2l"],
+          ["sp11l", "sp2"],
+          ["sp11l", "sp1"],
+          ["sp3ll", "sp11l"],
+          ["sp3ll", "sp11r"],
+          ["sp5l",  "sp1l"],
+          ["sp5l",  "sp2l"],
+          ["sp5l",  "sp2"],
+          ["sp5l",  "sp1"],
+          ["sp3ll", "sp5l"],
+          ["sp3ll", "sp5r"],
+          {"deformGroup":"", "deformationTriggerRatio":""}
+          {"breakGroup":""},
+
+          //rear fascia attach
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          ["sp7r",  "rfs1r"],
+          ["sp7r",  "rfs2rr"],
+          ["sp7r",  "rfs1"],
+          ["sp7r",  "rfs2"],
+          ["sp7r",  "rfs4r"],
+          ["sp7r",  "rfs4l"],
+          ["sp7l",  "rfs1l"],
+          ["sp7l",  "rfs2ll"],
+          ["sp7l",  "rfs1"],
+          ["sp7l",  "rfs2"],
+          ["sp7l",  "rfs4l"],
+          ["sp7l",  "rfs4r"],
+
+          ["sp9r",  "rfs1r"],
+          ["sp9r",  "rfs2rr"],
+          ["sp9r",  "rfs1"],
+          ["sp9r",  "rfs2"],
+          ["sp9r",  "rfs4r"],
+          ["sp9r",  "rfs4l"],
+
+          ["sp9l",  "rfs1l"],
+          ["sp9l",  "rfs2ll"],
+          ["sp9l",  "rfs1"],
+          ["sp9l",  "rfs2"],
+          ["sp9l",  "rfs4l"],
+          ["sp9l",  "rfs4r"],
+
+          ["sp10r", "rfs1r"],
+          ["sp10r", "rfs2rr"],
+          ["sp10r", "rfs1"],
+          ["sp10r", "rfs2"],
+          ["sp10r", "rfs4r"],
+          ["sp10r", "rfs4l"],
+
+          ["sp10l", "rfs1l"],
+          ["sp10l", "rfs2ll"],
+          ["sp10l", "rfs1"],
+          ["sp10l", "rfs2"],
+          ["sp10l", "rfs4l"],
+          ["sp10l", "rfs4r"],
+
+          //attach to subframe
+          {"beamSpring":401000,"beamDamp":20},
+          {"beamDeform":5000,"beamStrength":60000},
+          {"breakGroup":"spoiler_L"}
+          ["sp7l",  "rx7l"],
+          ["sp7l",  "rx7"],
+          ["sp7l",  "rx4l"],
+          ["sp9l",  "rx7l"],
+          ["sp9l",  "rx7"],
+          ["sp9l",  "rx4l"],
+          ["sp10l", "rx7l"],
+          ["sp10l", "rx7r"],
+          ["sp8l",  "rbs4l"],
+          ["sp8l",  "rbs5ll"],
+          ["sp8l",  "rbs5l"],
+          ["sp10r", "bbr1r"],
+          ["sp10r", "bbr1l"],
+          ["sp7r",  "rx4l"],
+          ["sp9r",  "rx4l"],
+          ["sp8r",  "rx6r"],
+          ["sp8r",  "rx6l"],
+          {"breakGroup":"spoiler_R"}
+          ["sp7r",  "rx7r"],
+          ["sp7r",  "rx7"],
+          ["sp7r",  "rx4r"],
+          ["sp9r",  "rx7r"],
+          ["sp9r",  "rx7"],
+          ["sp9r",  "rx4r"],
+          ["sp10r", "rx7l"],
+          ["sp10r", "rx7r"],
+          ["sp8r",  "rbs4r"],
+          ["sp8r",  "rbs5rr"],
+          ["sp8r",  "rbs5r"],
+          ["sp10l", "bbr1l"],
+          ["sp10l", "bbr1r"],
+          ["sp7l",  "rx4r"],
+          ["sp9l",  "rx4r"],
+          ["sp8l",  "rx6r"],
+          ["sp8l",  "rx6l"],
+          {"breakGroup":""}
+          //support beams
+          {"beamType":"|SUPPORT","beamLongBound":1},
+          {"beamPrecompression":3.4},
+          {"breakGroupType":1},
+          {"breakGroup":"spoiler_supportBeams"},
+          //damper
+          {"beamSpring":0,"beamDamp":200},
+          ["sp5r",  "sp7r"],
+          ["sp4r",  "sp9r"],
+          ["sp3r",  "sp10r"],
+          ["sp8r",  "sp6r"],
+
+          ["sp5l",  "sp7l"],
+          ["sp4l",  "sp9l"],
+          ["sp3l",  "sp10l"],
+          ["sp8l",  "sp6l"],
+
+          ["sp7r",  "sp11r"],
+          ["sp9r",  "sp11r"],
+          ["sp7l",  "sp11l"],
+          ["sp9l",  "sp11l"],
+
+          ["sp5r",  "rx6r",    {"breakGroup":"spoiler_R"}],
+          ["sp5l",  "rx6l",    {"breakGroup":"spoiler_L"}],
+          ["sp4l",  "rx6l",    {"breakGroup":"spoiler_L"}],
+          ["sp4r",  "rx6r",    {"breakGroup":"spoiler_R"}],
+
+          ["sp1r",  "rx6r",    {"breakGroup":"spoiler_R"}],
+          ["sp1l",  "rx6l",    {"breakGroup":"spoiler_L"}],
+
+          ["sp3rr", "rx6r",    {"breakGroup":"spoiler_R"}],
+          ["sp3ll", "rx6l",    {"breakGroup":"spoiler_L"}],
+
+
+          //slider
+          {"beamSpring":0,"beamDamp":200},
+          ["sp4r",  "sp5r"],
+          ["sp4l",  "sp5l"],
+
+          {"beamSpring":0,"beamDamp":200},
+          ["sp1l",  "sp9l",    {"breakGroup":"spoiler_L"}],
+          ["sp1",   "sp9l",    {"breakGroup":"spoiler_L"}],
+          ["sp1",   "sp9r",    {"breakGroup":"spoiler_R"}],
+          ["sp1r",  "sp9r",    {"breakGroup":"spoiler_R"}],
+
+          ["sp1l",  "sp7l",    {"breakGroup":"spoiler_L"}],
+          ["sp1",   "sp7l",    {"breakGroup":"spoiler_L"}],
+          ["sp1",   "sp7r",    {"breakGroup":"spoiler_R"}],
+          ["sp1r",  "sp7r",    {"breakGroup":"spoiler_R"}],
+
+          ["sp1ll", "rbs6lll", {"breakGroup":"spoiler_L"}],
+          ["sp1ll", "rbs6ll",  {"breakGroup":"spoiler_L"}],
+
+          ["sp1rr", "rbs6rrr", {"breakGroup":"spoiler_R"}],
+          ["sp1rr", "rbs6rr",  {"breakGroup":"spoiler_R"}],
+
+          //extra
+          {"beamSpring":0,"beamDamp":15},
+          {"breakGroup":"spoiler_L"},
+          ["sp1",   "sp7l"],
+          ["sp1",   "sp7r"],
+          ["sp1l",  "sp7l"],
+          ["sp1ll", "sp7l"],
+          ["sp1ll", "sp9l"],
+          ["sp2",   "sp9l"],
+          ["sp2l",  "sp9l"],
+          {"breakGroup":"spoiler_R"},
+          ["sp1r",  "sp7r"],
+          ["sp1rr", "sp7r"],
+          ["sp1rr", "sp9r"],
+          ["sp2",   "sp9r"],
+          ["sp2r",  "sp9r"],
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          //support beams
+          {"beamType":"|SUPPORT","beamLongBound":5},
+          {"beamSpring":501000,"beamDamp":20},
+          {"beamDeform":25000,"beamStrength":125000},
+          {"beamPrecompression":0.9},
+          {"optional":true},
+          {"breakGroup":"spoiler_supportBeams"},
+          ["sp1r",  "q18r"],
+          ["sp1r",  "q15r"],
+          ["sp1l",  "q18l"],
+          ["sp1l",  "q15l"],
+          {"optional":false},
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "hydros": [
+            ["id1:","id2:"],
+            {"beamDeform":55500,"beamStrength":145000},
+            {"beamSpring":501000,"beamDamp":20},
+            //["sp7l", "sp4l", {"inputSource":"lowbeam","inLimit":0,"outLimit":1.22,"inRate":10,"outRate":10,"inputFactor":1}],
+            //["sp7r", "sp4r", {"inputSource":"lowbeam","inLimit":0,"outLimit":1.22,"inRate":10,"outRate":10,"inputFactor":1}],
+            //["sp9l", "sp5l", {"inputSource":"lowbeam","inLimit":0,"outLimit":1.15,"inRate":10,"outRate":10,"inputFactor":1}],
+            //["sp9r", "sp5r", {"inputSource":"lowbeam","inLimit":0,"outLimit":1.15,"inRate":10,"outRate":10,"inputFactor":1}],
+            ["sp7l", "sp4l", {"inputSource":"spoilerR","inLimit":0,"outLimit":1.43,"inRate":10,"outRate":10,"inputFactor":1, "breakGroup":"spoiler_L"}],
+            ["sp7r", "sp4r", {"inputSource":"spoilerR","inLimit":0,"outLimit":1.43,"inRate":10,"outRate":10,"inputFactor":1, "breakGroup":"spoiler_R"}],
+            ["sp9l", "sp5l", {"inputSource":"spoilerF","inLimit":0,"outLimit":1.2,"inRate":10,"outRate":10,"inputFactor":1, "breakGroup":"spoiler_L"}],
+            ["sp9r", "sp5r", {"inputSource":"spoilerF","inLimit":0,"outLimit":1.2,"inRate":10,"outRate":10,"inputFactor":1, "breakGroup":"spoiler_R"}],
+    ],
+    "triangles": [
+            ["id1:", "id2:",  "id3:"],
+            {"dragCoef":51.6},
+            {"groundModel":"plastic"},
+            ["sp2l", "sp1ll", "sp1l",  {"liftCoef":40, "stallAngle":0.25}],
+            ["sp1l", "sp1",   "sp2",   {"liftCoef":40, "stallAngle":0.25}],
+            ["sp2",  "sp2l",  "sp1l",  {"liftCoef":40, "stallAngle":0.25}],
+            ["sp2",  "sp1",   "sp1r",  {"liftCoef":40, "stallAngle":0.25}],
+            ["sp1r", "sp2r",  "sp2",   {"liftCoef":40, "stallAngle":0.25}],
+            ["sp2r", "sp1r",  "sp1rr", {"liftCoef":40, "stallAngle":0.25}],
+
+            {"triangleType":"NONCOLLIDABLE"},
+            {"dragCoef":172},
+            ["sp4l", "sp8l",  "sp8r"],
+            ["sp8r", "sp4r",  "sp4l"],
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+    ],
+},
+"scintilla_chmsl": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Center High Mounted Stop Light",
+        "value":70,
+    },
+    "slotType" : "scintilla_chmsl",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_chmsl_center_bulb", ["chmsl_LEDstrip_4W"], [], "chmsl_LEDstrip_4W", "Center High Mounted Stop Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelights",
+          "$nodeRef":"sp1", "$nodeX":"sp1l", "$nodeY":"sp2",
+          "$deformGroup":"chmsl_break",
+          "$posX":0, "$posY":2.146, "$posZ":0.942,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"scintilla_chmsl_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_chmsl_glass_stock", ["scintilla_spoiler"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.2}],
+         {"deformGroup":"scintilla_chmsl_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_chmsl_stock", ["scintilla_spoiler"]],
+         {"deformGroup":""},
+    ]
+},
+"scintilla_chmsl_eu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Clear Center High Mounted Stop Light",
+        "value":70,
+    },
+    "slotType" : "scintilla_chmsl",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_chmsl_eu_center_bulb", ["chmsl_LEDstrip_4W"], [], "chmsl_LEDstrip_4W", "Center High Mounted Stop Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelights",
+          "$nodeRef":"sp1", "$nodeX":"sp1l", "$nodeY":"sp2",
+          "$deformGroup":"chmsl_break",
+          "$posX":0, "$posY":2.146, "$posZ":0.942,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"scintilla_chmsl_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_chmsl_glass_stock", ["scintilla_spoiler"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound2", "deformVolume":0.2}],
+         {"deformGroup":"scintilla_chmsl_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_chmsl_stock", ["scintilla_spoiler"]],
+         {"deformGroup":""},
+    ],
+     "glowMap":{
+        "scintilla_chmsl": {"simpleFunction":{"brakelights":1},                   "off":"scintilla_lights_eu", "on":"scintilla_lights_eu_on", "on_intense":"scintilla_lights_on_intense"},
+    }
+},
+}

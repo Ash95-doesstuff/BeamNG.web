@@ -1,0 +1,175 @@
+{"scintilla_frunk":
+{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Frunk Liner",
+        "value":400,
+    },
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["cargo_load_box_M_trunk_A_90deg", ["cargo_load_box_M_trunk_A_90deg"], [], "", "Frunk Load", {
+            "nodeMove":{"x":0.0, "y":-1.86, "z":0.28},
+        }],
+    ],
+    "slotType" :"scintilla_frunk",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["scintilla_frunk", ["scintilla_frunk"]],
+    ],
+
+    "nodes":[
+         ["id",    "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"selfCollision":true},
+         {"collision":true},
+
+         //frunk
+         {"nodeWeight":0.7},
+         {"group":"scintilla_frunk"},
+         ["fnk1r",-0.368, -1.738,  0.675],
+         ["fnk1l", 0.368, -1.738,  0.675],
+
+         ["fnk2r",-0.179, -2.011,  0.165],
+         ["fnk2l", 0.179, -2.011,  0.165],
+         {"nodeWeight":11.5},
+         ["fnk3",  0.0,   -1.537,  0.361,  {"selfCollision":false}],
+         {"group":""},
+        ],
+
+    "beams":[
+          ["id1:",          "id2:"],
+          //--EXPANSION DEFORM LIMIT DEFAULT--
+          {"deformLimitExpansion":1.2},
+
+          //frunk main shape
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":801000,"beamDamp":125},
+          {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+          ["fnk1l",         "fx3l"],
+          ["fnk1r",         "fx3r"],
+          ["fnk2l",         "fnk2r"],
+          ["fnk2l",         "bbf2l"],
+          ["fnk2r",         "bbf2r"],
+          ["fnk3",          "fnk1r"],
+          ["fnk3",          "fnk1l"],
+          //weak
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["fnk2r",         "fnk3"],
+          ["fnk2l",         "fnk3"],
+          ["bbf2l",         "fnk1l"],
+          ["fnk1l",         "f6l"],
+          ["bbf2r",         "fnk1r"],
+          ["fnk1r",         "f6r"],
+
+          //surficial crossing
+          {"deformLimitExpansion":""},
+          {"beamDeform":2500,"beamStrength":"FLT_MAX"},
+          ["fnk2r",         "fnk1r"],
+          ["fnk3",          "bbf2r"],
+          ["fnk2l",         "fnk1l"],
+          ["fnk3",          "bbf2l"],
+          ["fnk3",          "f6l"],
+          ["fnk3",          "f6r"],
+          ["fnk2l",         "bbf2"],
+          ["fnk2r",         "bbf2"],
+          ["fnk2l",         "bbf2r"],
+          ["fnk2r",         "bbf2l"],
+
+          //rigids
+          {"beamDeform":4500,"beamStrength":"FLT_MAX"},
+          ["fnk2l",         "bbf1l"],
+          ["fnk2l",         "fx1l"],
+          ["fnk2r",         "bbf1r"],
+          ["fnk2r",         "fx1r"],
+          ["fnk2r",         "bbf1"],
+          ["fnk2l",         "bbf1"],
+          ["fnk1l",         "fx1l"],
+          ["fnk1r",         "fx1r"],
+          {"beamSpring":1801000,"beamDamp":125},
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          ["fnk3",          "fx3l"],
+          ["fnk3",          "fx3r"],
+          ["fnk3",          "fx1l"],
+          ["fnk3",          "fx1r"],
+          ["fnk3",          "fx4l"],
+          ["fnk3",          "fx4r"],
+          ["fnk3",          "fx2l"],
+          ["fnk3",          "fx2r"],
+
+          //attach cargobox
+          {"beamSpring":1501000,"beamDamp":30},
+          {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+          {"optional":true},
+          ["trunk_box_A_5", "fnk1r"],
+          ["trunk_box_A_5", "fnk2r"],
+          ["trunk_box_A_5", "fnk3"],
+          ["trunk_box_A_4", "fnk1r"],
+          ["trunk_box_A_4", "fnk2r"],
+          ["trunk_box_A_4", "fx3r"],
+          ["trunk_box_A_6", "fnk1r"],
+          ["trunk_box_A_6", "fnk2r"],
+          ["trunk_box_A_6", "fnk3"],
+
+          ["trunk_box_A_1", "fnk1l"],
+          ["trunk_box_A_1", "fnk2l"],
+          ["trunk_box_A_1", "fnk3"],
+          ["trunk_box_A_2", "fnk1l"],
+          ["trunk_box_A_2", "fnk2l"],
+          ["trunk_box_A_2", "fnk3"],
+          ["trunk_box_A_0", "fnk1l"],
+          ["trunk_box_A_0", "fnk2l"],
+          ["trunk_box_A_0", "fnk3"],
+          {"optional":false},
+
+          //frunk support beams
+          {"beamType":"|SUPPORT","beamLongBound":4},
+          {"beamSpring":601000,"beamDamp":60},
+          {"beamDeform":8080,"beamStrength":178000},
+
+          //bleed through
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"deformLimitExpansion":1.2},
+    ],
+
+    "triangles":[
+        ["id1:",  "id2:",  "id3:"],
+        {"triangleType":"NORMALTYPE"},
+        {"groundModel":"metal"},
+        //underside
+        {"dragCoef":0},
+        {"group":"scintilla_tub"},
+        ["bbf1",  "fnk2r", "fnk2l"],
+        ["fnk2l", "bbf1l", "bbf1"],
+        ["bbf1",  "bbf1r", "fnk2r"],
+        ["bbf1r", "fx1r",  "fnk2r"],
+        ["fnk2l", "fx1l",  "bbf1l"],
+        ["fnk2r", "fx1r",  "fx1l"],
+        ["fx1l",  "fnk2l", "fnk2r"],
+
+        //frunk
+        {"group":"scintilla_frunk"},
+        {"triangleType":"NONCOLLIDABLE"},
+        ["f6r",   "fx3r",  "fnk1r"],
+        ["fnk1r", "fx3r",  "bbf2r"],
+        ["fnk1l", "bbf2l", "fx3l"],
+        ["fx3l",  "f6l",   "fnk1l"],
+        {"triangleType":"NORMALTYPE"},
+
+        //["fnk1r", "f13rr", "fx3r"],
+        //["f6r", "f13rr", "fnk1r"],
+        //["fnk1r", "fx3r", "bbf2r"],
+        //["fnk1l", "fx3l", "f13ll"],
+        //["f6l", "fnk1l", "f13ll"],
+        //["fnk1l", "bbf2l", "fx3l"],
+        //["f6r", "fnk3", "f6l"],
+        //["f6r", "fnk1r", "fnk3"],
+        //["fnk3", "fnk1l", "f6l"],
+        //["fnk1r", "bbf2r", "fnk3"],
+        //["fnk3", "bbf2l", "fnk1l"],
+        //["fnk3", "bbf2r", "bbf2"],
+        //["bbf2", "bbf2l", "fnk3"],
+        {"group":""},
+        ],
+},
+}

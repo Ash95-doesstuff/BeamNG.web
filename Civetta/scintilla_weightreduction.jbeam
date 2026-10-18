@@ -1,0 +1,127 @@
+{"scintilla_weightreduction_hardtop":
+{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Insulation and Accessories",
+        "value":500,
+    },
+
+    "slotType" :"scintilla_weightreduction_hardtop",
+
+    "nodes":[
+         ["id",    "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true},
+
+         //--CHASSIS--
+
+         //floor
+         {"nodeWeight":7.0},
+         {"group":["scintilla_chassis","scintilla_floor"]},
+         ["f1rr", -0.884, -0.916,  0.152],
+         ["f1ll",  0.884, -0.916,  0.152],
+
+         {"nodeWeight":6.5}
+         ["f2rr", -0.884, -0.478,  0.152],
+         ["f2r",  -0.3,   -0.574,  0.142],
+         ["f2l",   0.3,   -0.574,  0.142],
+         ["f2ll",  0.884, -0.478,  0.152],
+
+         ["f3rr", -0.884,  0.117,  0.152,  {"nodeWeight":7.0, "couplerTag":"subframe_R_1rr", "couplerStrength":140000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_RR1"}],
+         ["f3r",  -0.3,    0.117,  0.142,  {"nodeWeight":8.5, "couplerTag":"subframe_R_1r", "couplerStrength":180000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_R1"}],
+         ["f3l",   0.3,    0.117,  0.142,  {"nodeWeight":8.5, "couplerTag":"subframe_R_1l", "couplerStrength":180000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_L1"}],
+         ["f3ll",  0.884,  0.117,  0.152,  {"nodeWeight":7.0, "couplerTag":"subframe_R_1ll", "couplerStrength":140000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_LL1"}],
+
+         //front firewall
+         {"group":["scintilla_chassis","scintilla_dash"]},
+         ["f5rr", -0.874, -0.915,  0.49],
+         ["f5ll",  0.874, -0.915,  0.49],
+
+         {"group":["scintilla_chassis","scintilla_dash","scintilla_windshield"]},
+         {"nodeWeight":5.2},
+         ["f6rrr",-0.82,  -1.1,    0.76,   {"group":"scintilla_chassis", "nodeWeight":4.2}],
+         //["f6rr", -0.695, -0.847,  0.8],
+         //["f6r",  -0.285, -1.238,  0.8,    {"group":["scintilla_chassis","scintilla_dash","scintilla_windshield", "scintilla_frunk"]}],
+         //["f6l",   0.285, -1.238,  0.8,    {"group":["scintilla_chassis","scintilla_dash","scintilla_windshield", "scintilla_frunk"]}],
+         //["f6ll",  0.695, -0.847,  0.8],
+         ["f6lll", 0.82,  -1.1,    0.76,   {"group":"scintilla_chassis", "nodeWeight":4.2}],
+
+         //floor thickness
+         {"nodeWeight":6.5}
+         {"group":["scintilla_chassis","scintilla_console"]},
+         ["f7r",  -0.3,   -0.574,  0.446,  {"collision":false, "selfCollision":false}],
+         ["f7l",   0.3,   -0.574,  0.446,  {"collision":false, "selfCollision":false}],
+         {"group":["scintilla_chassis","scintilla_console","scintilla_flexbody_anchor_F"]},
+         ["f8r",  -0.3,    0.067,  0.462,  {"collision":false, "selfCollision":false}],
+         ["f8l",   0.3,    0.067,  0.462,  {"collision":false, "selfCollision":false}],
+         {"group":""},
+        ],
+}
+"scintilla_weightreduction_spider":
+{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Insulation and Accessories",
+        "value":500,
+    },
+
+    "slotType" :"scintilla_weightreduction_spider",
+
+    "nodes":[
+         ["id",    "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":true},
+         {"collision":true},
+
+         //--CHASSIS--
+
+         //floor
+         {"nodeWeight":10.0},
+         {"group":["scintilla_chassis","scintilla_floor"]},
+         ["f1rr", -0.884, -0.916,  0.152],
+         ["f1ll",  0.884, -0.916,  0.152],
+
+         {"nodeWeight":6.5}
+         ["f2rr", -0.884, -0.478,  0.152],
+         ["f2r",  -0.3,   -0.574,  0.142],
+         ["f2l",   0.3,   -0.574,  0.142],
+         ["f2ll",  0.884, -0.478,  0.152],
+
+         ["f3rr", -0.884,  0.117,  0.152,  {"nodeWeight":7.0, "couplerTag":"subframe_R_1rr", "couplerStrength":140000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_RR1"}],
+         ["f3r",  -0.3,    0.117,  0.142,  {"nodeWeight":8.5, "couplerTag":"subframe_R_1r", "couplerStrength":180000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_R1"}],
+         ["f3l",   0.3,    0.117,  0.142,  {"nodeWeight":8.5, "couplerTag":"subframe_R_1l", "couplerStrength":180000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_L1"}],
+         ["f3ll",  0.884,  0.117,  0.152,  {"nodeWeight":7.0, "couplerTag":"subframe_R_1ll", "couplerStrength":140000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"subframe_LL1"}],
+
+         //front firewall
+         {"group":["scintilla_chassis","scintilla_dash"]},
+         ["f5rr", -0.874, -0.915,  0.49],
+         ["f5ll",  0.874, -0.915,  0.49],
+
+         //front firewall
+         {"group":["scintilla_chassis","scintilla_dash"]},
+         ["f5rr", -0.874, -0.915,  0.49],
+         ["f5ll",  0.874, -0.915,  0.49],
+
+         {"group":["scintilla_chassis","scintilla_dash","scintilla_windshield"]},
+         {"nodeWeight":10.5},
+         ["f6rrr",-0.82,  -1.1,    0.76,   {"group":"scintilla_chassis", "nodeWeight":9.0}],
+         //["f6rr", -0.695, -0.847,  0.8],
+         //["f6r",  -0.285, -1.238,  0.8,    {"group":["scintilla_chassis","scintilla_dash","scintilla_windshield", "scintilla_frunk"]}],
+         //["f6l",   0.285, -1.238,  0.8,    {"group":["scintilla_chassis","scintilla_dash","scintilla_windshield", "scintilla_frunk"]}],
+         //["f6ll",  0.695, -0.847,  0.8],
+         ["f6lll", 0.82,  -1.1,    0.76,   {"group":"scintilla_chassis", "nodeWeight":9.0}],
+
+         //floor thickness
+         {"group":["scintilla_chassis","scintilla_console"]},
+         ["f7r",  -0.3,   -0.574,  0.446,  {"collision":false, "selfCollision":false}],
+         ["f7l",   0.3,   -0.574,  0.446,  {"collision":false, "selfCollision":false}],
+         {"group":["scintilla_chassis","scintilla_console","scintilla_flexbody_anchor_F"]},
+         ["f8r",  -0.3,    0.067,  0.462,  {"collision":false, "selfCollision":false}],
+         ["f8l",   0.3,    0.067,  0.462,  {"collision":false, "selfCollision":false}],
+         {"group":""},
+        ],
+}
+}

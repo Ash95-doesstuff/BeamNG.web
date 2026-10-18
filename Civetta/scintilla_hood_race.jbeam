@@ -1,0 +1,316 @@
+{
+"scintilla_hood_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Hood",
+        "value":2580,
+    },
+    "slotType" : "scintilla_hood",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_darkowl_hood", ["scintilla_hood"]],
+         ["scintilla_darkowl_hood_insert", ["scintilla_hood"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //--HOOD--
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":0.4},
+         {"group":"scintilla_hood"},
+         ["h1r",  -0.429, -1.27,   0.796],
+         ["h1",    0.0,   -1.399,  0.79],
+         ["h1l",   0.429, -1.27,   0.796],
+
+         ["h2r",  -0.362, -1.723,  0.719],
+         ["h2",    0.0,   -1.723,  0.705,  {"selfCollision":false,"collision":false}],
+         ["h2l",   0.362, -1.723,  0.719],
+
+         ["h3r",  -0.406, -2.024,  0.601],
+         ["h3l",   0.406, -2.024,  0.601],
+
+         ["h4r",-0.455, -2.212,  0.515],
+         ["h4",  0.0,   -2.30,  0.5],
+         ["h4l", 0.455, -2.212,  0.515],
+         //Air duct
+         {"selfCollision":false},
+         {"nodeWeight":0.35},
+         ["fad1r",-0.36,  -2.1,    0.37],
+         ["fad1",  0.0,   -2.1,    0.37,   {"nodeWeight":0.4}],
+         ["fad1l", 0.36,  -2.1,    0.37],
+
+         ["fad2r",-0.34,  -1.99,   0.52],
+         ["fad2",  0.0,   -1.99,   0.52],
+         ["fad2l", 0.34,  -1.99,   0.52],
+         {"group":""},
+
+         //rigidifer
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeWeight":0.5},
+         ["h5r",  -0.362, -1.676,  0.5],
+         ["h5l",   0.362, -1.676,  0.5],
+    ],
+    "beams": [
+          ["id1:",  "id2:"],
+          //--HOOD--
+
+          //hood main shape
+          {"beamSpring":401000,"beamDamp":40},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          //lengthwise
+          {"deformLimitExpansion":1.2},
+          ["h1r",   "h2r"],
+          ["h1",    "h2"],
+          ["h1l",   "h2l"],
+          ["h2r",   "h3r"],
+
+          ["h2l",   "h3l"],
+          ["h3r",   "h4r"],
+
+          ["h3l",   "h4l"],
+
+          ["fad1r", "fad2r"],
+          ["fad2r", "h2r"],
+          ["fad1",  "fad2"],
+          ["fad2",  "h2"],
+          ["fad1l", "fad2l"],
+          ["fad2l", "h2l"],
+
+          //widthwise
+          ["h1r",   "h1"],
+          ["h1l",   "h1"],
+          ["h2r",   "h2"],
+          ["h2l",   "h2"],
+
+
+          ["h4r",   "h4"],
+          ["h4l",   "h4"],
+
+          ["fad1r", "fad1"],
+          ["fad1",  "fad1l"],
+          ["fad2r", "fad2"],
+          ["fad2",  "fad2l"],
+
+          //surf cross
+          {"deformLimitExpansion":""},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["h1r",   "h2"],
+          ["h1l",   "h2"],
+          ["h2r",   "h1"],
+          ["h2l",   "h1"],
+
+          ["h3r",   "h2"],
+          ["h3l",   "h2"],
+          ["h3r",   "h4"],
+          ["h3l",   "h4"],
+
+          ["h2r",   "fad2"],
+          ["h2",    "fad2r"],
+          ["h2",    "fad2l"],
+          ["h2l",   "fad2"],
+          ["fad2r", "fad1"],
+          ["fad2",  "fad1r"],
+          ["fad2",  "fad1l"],
+          ["fad2l", "fad1"],
+          //air duct vertical
+          ["fad1l", "h4l"],
+          ["fad1",  "h4"],
+          ["fad1r", "h4r"],
+          ["fad2r", "h3r"],
+
+          ["fad2l", "h3l"],
+          //crossing
+          ["h4l",   "fad2l"],
+          ["h3l",   "fad1l"],
+          ["h3r",   "fad1r"],
+          ["h4r",   "fad2r"],
+          ["h4r",   "fad1"],
+          ["h4",    "fad1r"],
+          ["h4",    "fad1l"],
+          ["h4l",   "fad1"],
+          //front center node rigify
+          ["h4",    "fad2"],
+          ["h4",    "fad2r"],
+          ["h4",    "fad2l"],
+
+          //rigids
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          ["h1r",   "h3r"],
+
+          ["h1l",   "h3l"],
+          ["h2r",   "h4r"],
+          ["h2",    "h4"],
+          ["h2l",   "h4l"],
+          ["fad1l", "h2l"],
+          ["h2",    "fad1"],
+          ["fad1r", "h2r"],
+
+          //widthwise
+          ["h1r",   "h1l"],
+          ["h3r",   "h3l"],
+          ["h4r",   "h4l"],
+          ["fad1l", "fad1r"],
+          ["fad2r", "fad2l"],
+
+
+          //rigidifier
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          ["h1r",   "h5r"],
+          ["h1",    "h5r"],
+          ["h1l",   "h5r"],
+          ["h2r",   "h5r"],
+          ["h2",    "h5r"],
+          ["h2l",   "h5r"],
+          ["h3r",   "h5r"],
+
+          ["h3l",   "h5r"],
+          ["h4r",   "h5r"],
+          ["h4",    "h5r"],
+          ["h4l",   "h5r"],
+
+          ["h1r",   "h5l"],
+          ["h1",    "h5l"],
+          ["h1l",   "h5l"],
+          ["h2r",   "h5l"],
+          ["h2",    "h5l"],
+          ["h2l",   "h5l"],
+          ["h3r",   "h5l"],
+
+          ["h3l",   "h5l"],
+          ["h4r",   "h5l"],
+          ["h4",    "h5l"],
+          ["h4l",   "h5l"],
+
+          ["fad2r", "h5r"],
+          ["fad2",  "h5r"],
+
+          ["fad1",  "h5r"],
+          ["fad1r", "h5r"],
+
+          ["fad2",  "h5l"],
+          ["fad2l", "h5l"],
+          ["fad1",  "h5l"],
+          ["fad1l", "h5l"],
+
+          //attach
+          {"beamSpring":501000,"beamDamp":50},
+          {"beamDeform":5500,"beamStrength":18000},
+          {"breakGroup":"hoodcover_RR"},
+          ["h1r",   "f6l"],
+          ["h1r",   "fx4r"],
+          ["h2r",   "f6l"],
+          ["h2r",   "fx4r"],
+          ["h1r",   "f6rr"],
+          ["h1r",   "f6r"],
+          ["h1r",   "fx3r"],
+          {"breakGroup":"hoodcover_RL"},
+          ["h1l",   "f6l"],
+          ["h1l",   "fx4l"],
+          ["h2l",   "f6l"],
+          ["h2l",   "fx4l"],
+          ["h1l",   "f6ll"],
+          ["h1l",   "f6r"],
+          ["h1l",   "fx3l"],
+
+          {"beamSpring":501000,"beamDamp":40},
+          {"beamDeform":7000,"beamStrength":10000},
+          {"breakGroup":"hoodcover_F1"},
+          ["h4",    "bbf1"],
+          ["h4",    "bbf1r"],
+          ["h4",    "bbf1l"],
+          ["h4l",   "bbf2"],
+          ["h4r",   "bbf2"],
+          ["h4l",   "bbf1"],
+          ["h4r",   "bbf1"],
+          {"beamSpring":401000,"beamDamp":20},
+          {"beamDeform":3000,"beamStrength":8000},
+          {"breakGroup":"hoodcover_F2"},
+          ["fad1",  "bbf1"],
+          ["fad1",  "bbf1r"],
+          ["fad1",  "bbf1l"],
+          ["fad1l", "bbf2"],
+          ["fad1r", "bbf2"],
+          ["fad1l", "bbf1"],
+          ["fad1r", "bbf1"],
+          {"beamDeform":4000,"beamStrength":18000},
+
+
+
+          {"breakGroup":""},
+
+          //damping
+          {"beamDeform":50000,"beamStrength":400000},
+          {"beamSpring":0,"beamDamp":30},
+          ["h4r",   "fx3r",  {"breakGroup":"hoodcover_RR"}],
+          ["h4l",   "fx3l",  {"breakGroup":"hoodcover_RL"}],
+          {"breakGroup":""},
+
+          //limiter
+          {"breakGroupType":0},
+          //support beams
+          {"beamType":"|SUPPORT","beamLongBound":15},
+          {"beamSpring":501000,"beamDamp":30},
+          {"beamDeform":12000,"beamStrength":20000},
+          {"breakGroup":"hood_supportBeams"},
+          ["h4l",   "bbf1l"],
+          ["h4",    "bbf1"],
+          ["h4r",   "bbf1r"],
+          ["h3l",   "bbf1l"],
+          ["h3r",   "bbf1r"],
+          ["h2l",   "fx3l"],
+          ["h2r",   "fx3r"],
+          ["h1l",   "fx3l"],
+          ["h1l",   "fx4l"],
+          ["h1r",   "fx3r"],
+          ["h1r",   "fx4r"],
+          ["h1l",   "f6l"],
+          ["h1l",   "f6ll"],
+          ["h1r",   "f6rrr"],
+          ["h1r",   "f6r"],
+          {"optional":true}
+          ["h2l",   "fnk1l", {"beamLongBound":30}],
+          ["h2r",   "fnk1r", {"beamLongBound":30}],
+          {"optional":false}
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+          ["id1:",  "id2:",  "id3:"],
+          //hood
+          {"groundModel":"metal"},
+          {"group":"scintilla_hood"},
+          {"dragCoef":6.88},
+          ["h2r",   "h1",    "h1r",   {"liftCoef":30}],
+          ["h1",    "h2l",   "h1l",   {"liftCoef":30}],
+          ["h3r",   "h4r",   "h4",    {"liftCoef":30}],
+          ["h4",    "h4l",   "h3l",   {"liftCoef":30}],
+          //air duct
+          ["h2r",   "h2",    "h1",    {"liftCoef":30}],
+          ["h2",    "h2l",   "h1",    {"liftCoef":30}],
+          ["h2r",   "fad2r", "fad2",  {"liftCoef":70}],
+          ["fad2",  "h2",    "h2r",   {"liftCoef":70}],
+          ["fad2",  "fad2l", "h2l",   {"liftCoef":70}],
+          ["h2l",   "h2",    "fad2",  {"liftCoef":70}],
+          ["fad2r", "fad1r", "fad1",  {"stallAngle":0.87,"liftCoef":70}],
+          ["fad1",  "fad2",  "fad2r", {"stallAngle":0.87,"liftCoef":70}],
+          ["fad1",  "fad1l", "fad2l", {"stallAngle":0.87,"liftCoef":70}],
+          ["fad2l", "fad2",  "fad1",  {"stallAngle":0.87,"liftCoef":70}],
+          //air duct sides
+          {"dragCoef":0.86},
+          {"triangleType":"NONCOLLIDABLE"},
+          ["h2l",   "fad2l", "h3l"],
+          ["h3l",   "fad2l", "fad1l"],
+          ["fad1l", "h4l",   "h3l"],
+          ["h4r",   "fad1r", "fad2r"],
+          ["fad2r", "h3r",   "h4r"],
+          ["fad2r", "h2r",   "h3r"],
+          {"triangleType":"NORMALTYPE"},
+          {"group":""},
+    ],
+},
+}

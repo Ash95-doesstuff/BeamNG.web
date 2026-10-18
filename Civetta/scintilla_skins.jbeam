@@ -1,0 +1,143 @@
+{
+"scintilla_skin_police": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Polizia",
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "police"
+  },
+"scintilla_skin_anniversary": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Anniversary",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.BeamNG"
+            }
+        },
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "anniversary"
+  },
+"scintilla_skin_twotone": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Two Tone",
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "twotone"
+  },
+"scintilla_skin_drippybrush": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Drippy Brush",
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "drippybrush"
+  },
+"scintilla_skin_scuderia": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.Scuderia BRAND",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Civetta"
+            }
+        },
+        "value":10350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "scuderia"
+ },
+"scintilla_skin_amateur": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Amateur Rally",
+        "value":5000
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "amateur"
+ },
+"scintilla_skin_darkowl": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Dark Owl"
+            }
+        },
+        "value":500000
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "darkowl"
+  },
+"scintilla_skin_blackroof": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Roof",
+        "value":6000
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "blackroof"
+  },
+"scintilla_skin_stripes": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stripes",
+        "value":500
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "stripes"
+  },
+"scintilla_skin_gradient": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Two-Color Gradient",
+        "value":5000
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "gradient"
+  },
+"scintilla_skin_interior_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sport Interior",
+        "value":3500
+    },
+    "slotType" : "skin_interior",
+    "skinName" : ""
+},
+"scintilla_skin_interior_luxe": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Luxe Interior",
+        "value":4000
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "luxe"
+},
+"scintilla_skin_interior_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Interior",
+        "value":17000
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "race"
+},
+"scintilla_skin_fire_horse": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Fire Horse",
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "fire_horse"
+  }
+}

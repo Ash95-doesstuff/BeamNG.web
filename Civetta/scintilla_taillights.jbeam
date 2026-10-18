@@ -1,0 +1,304 @@
+{
+"scintilla_taillight_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Right Taillight",
+        "value":450,
+    },
+    "slotType" : "scintilla_taillight_R",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_taillight_R_brake_bulb", ["led_modern_red_5W"], [], "led_modern_red_5W", "Brake Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelights",
+          "$nodeRef":"rfs1rr", "$nodeX":"rfs1r", "$nodeY":"rfs3rr",
+          "$deformGroup":"taillightglass_R_break",
+          "$posX":-0.666, "$posY":1.982, "$posZ":0.717,
+          "$rotX":0, "$rotY":0, "$rotZ":-6.718,
+          "$shadowEnable":1
+        }
+        }],
+        ["scintilla_taillight_R_running_bulb", ["ledPositionLightbar_2W"], [], "ledPositionLightbar_2W", "Running Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighbeam",
+          "$nodeRef":"rfs1rr", "$nodeX":"rfs1r", "$nodeY":"rfs3rr",
+          "$deformGroup":"taillightglass_R_break",
+          "$posX":-0.737, "$posY":1.94, "$posZ":0.672,
+          "$rotX":0, "$rotY":0, "$rotZ":-15.659,
+          "$shadowEnable":1,
+          "$cookieName":"art/special/BNG_light_cookie_headlight.dds"
+        }
+        }],
+        ["scintilla_taillight_R_signal_bulb", ["led_modern_amber_5W"], [], "led_modern_amber_5W", "Turn Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_R",
+          "$nodeRef":"rfs1rr", "$nodeX":"rfs1r", "$nodeY":"rfs3rr",
+          "$deformGroup":"taillightglass_R_break",
+          "$posX":-0.647, "$posY":1.985, "$posZ":0.744,
+          "$rotX":0, "$rotY":0, "$rotZ":-25.415
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillight_glass_R", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_taillight_R", ["scintilla_fascia_R"]],
+         {"deformGroup":""},
+    ],
+},
+"scintilla_taillight_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Left Taillight",
+        "value":450,
+    },
+    "slotType" : "scintilla_taillight_L",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_taillight_L_brake_bulb", ["led_modern_red_5W"], [], "led_modern_red_5W", "Brake Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelights",
+          "$nodeRef":"rfs1ll", "$nodeX":"rfs1l", "$nodeY":"rfs3ll",
+          "$deformGroup":"taillightglass_L_break",
+          "$posX":0.666, "$posY":1.982, "$posZ":0.717,
+          "$rotX":0, "$rotY":0, "$rotZ":6.718,
+          "$shadowEnable":1
+        }
+        }],
+        ["scintilla_taillight_L_running_bulb", ["ledPositionLightbar_2W"], [], "ledPositionLightbar_2W", "Running Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighbeam",
+          "$nodeRef":"rfs1ll", "$nodeX":"rfs1l", "$nodeY":"rfs3ll",
+          "$deformGroup":"taillightglass_L_break",
+          "$posX":0.737, "$posY":1.94, "$posZ":0.672,
+          "$rotX":0, "$rotY":0, "$rotZ":15.659,
+          "$shadowEnable":1,
+          "$cookieName":"art/special/BNG_light_cookie_headlight.dds"
+        }
+        }],
+        ["scintilla_taillight_L_signal_bulb", ["led_modern_amber_5W"], [], "led_modern_amber_5W", "Turn Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_L",
+          "$nodeRef":"rfs1ll", "$nodeX":"rfs1l", "$nodeY":"rfs3ll",
+          "$deformGroup":"taillightglass_L_break",
+          "$posX":0.647, "$posY":1.985, "$posZ":0.744,
+          "$rotX":0, "$rotY":0, "$rotZ":25.415
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillight_glass_L", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_taillight_L", ["scintilla_fascia_R"]],
+         {"deformGroup":""},
+    ],
+},
+"scintilla_taillight_M": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Red Taillight Bar",
+        "value":550,
+    },
+    "slotType" : "scintilla_taillight_M",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_taillightbar_center_bulb", ["ledPositionLightbar_2W"], [], "ledPositionLightbar_2W", "Center Position Light Bar",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighbeam",
+          "$nodeRef":"rfs1", "$nodeX":"rfs1l", "$nodeY":"rfs3",
+          "$deformGroup":"taillightglass_M_break",
+          "$posX":0, "$posY":2.15, "$posZ":0.79,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillightbar_glass_R", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_taillightbar_R", ["scintilla_fascia_R"]],
+
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillightbar_glass_L", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_taillightbar_L", ["scintilla_fascia_R"]],
+
+         {"deformGroup":"taillightglass_M_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillightbar_glass_M", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_M_break", "deformMaterialBase":"scintilla_lights", "deformMaterialDamaged":"scintilla_lights"},
+         ["scintilla_taillightbar_M", ["scintilla_fascia_R"]],
+         {"deformGroup":""},
+    ],
+},
+"scintilla_taillight_R_eu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Clear Right Taillight",
+        "value":450,
+    },
+    "slotType" : "scintilla_taillight_R",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_taillight_R_eu_brake_bulb", ["led_modern_red_5W"], [], "led_modern_red_5W", "Brake Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelights",
+          "$nodeRef":"rfs1rr", "$nodeX":"rfs1r", "$nodeY":"rfs3rr",
+          "$deformGroup":"taillightglass_R_break",
+          "$posX":-0.666, "$posY":1.982, "$posZ":0.717,
+          "$rotX":0, "$rotY":0, "$rotZ":-6.718,
+          "$shadowEnable":1
+        }
+        }],
+        ["scintilla_taillight_R_eu_running_bulb", ["ledPositionLightbar_2W"], [], "ledPositionLightbar_2W", "Running Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighbeam",
+          "$nodeRef":"rfs1rr", "$nodeX":"rfs1r", "$nodeY":"rfs3rr",
+          "$deformGroup":"taillightglass_R_break",
+          "$posX":-0.737, "$posY":1.94, "$posZ":0.672,
+          "$rotX":0, "$rotY":0, "$rotZ":-15.659,
+          "$shadowEnable":1,
+          "$cookieName":"art/special/BNG_light_cookie_headlight.dds"
+        }
+        }],
+        ["scintilla_taillight_R_eu_signal_bulb", ["led_modern_amber_5W"], [], "led_modern_amber_5W", "Turn Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_R",
+          "$nodeRef":"rfs1rr", "$nodeX":"rfs1r", "$nodeY":"rfs3rr",
+          "$deformGroup":"taillightglass_R_break",
+          "$posX":-0.647, "$posY":1.985, "$posZ":0.744,
+          "$rotX":0, "$rotY":0, "$rotZ":-25.415
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillight_glass_R", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_lights_eu", "deformMaterialDamaged":"scintilla_lights_eu"},
+         ["scintilla_taillight_R_eu", ["scintilla_fascia_R"]],
+         {"deformGroup":""},
+    ],
+},
+"scintilla_taillight_L_eu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Clear Left Taillight",
+        "value":450,
+    },
+    "slotType" : "scintilla_taillight_L",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_taillight_L_eu_brake_bulb", ["led_modern_red_5W"], [], "led_modern_red_5W", "Brake Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"brakelights",
+          "$nodeRef":"rfs1ll", "$nodeX":"rfs1l", "$nodeY":"rfs3ll",
+          "$deformGroup":"taillightglass_L_break",
+          "$posX":0.666, "$posY":1.982, "$posZ":0.717,
+          "$rotX":0, "$rotY":0, "$rotZ":6.718,
+          "$shadowEnable":1
+        }
+        }],
+        ["scintilla_taillight_L_eu_running_bulb", ["ledPositionLightbar_2W"], [], "ledPositionLightbar_2W", "Running Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighbeam",
+          "$nodeRef":"rfs1ll", "$nodeX":"rfs1l", "$nodeY":"rfs3ll",
+          "$deformGroup":"taillightglass_L_break",
+          "$posX":0.737, "$posY":1.94, "$posZ":0.672,
+          "$rotX":0, "$rotY":0, "$rotZ":15.659,
+          "$shadowEnable":1,
+          "$cookieName":"art/special/BNG_light_cookie_headlight.dds"
+        }
+        }],
+        ["scintilla_taillight_L_eu_signal_bulb", ["led_modern_amber_5W"], [], "led_modern_amber_5W", "Turn Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"signal_L",
+          "$nodeRef":"rfs1ll", "$nodeX":"rfs1l", "$nodeY":"rfs3ll",
+          "$deformGroup":"taillightglass_L_break",
+          "$posX":0.647, "$posY":1.985, "$posZ":0.744,
+          "$rotX":0, "$rotY":0, "$rotZ":25.415
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillight_glass_L", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_lights_eu", "deformMaterialDamaged":"scintilla_lights_eu"},
+         ["scintilla_taillight_L_eu", ["scintilla_fascia_R"]],
+         {"deformGroup":""},
+    ],
+},
+"scintilla_taillight_M_eu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Clear Taillight Bar",
+        "value":550,
+    },
+    "slotType" : "scintilla_taillight_M",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["scintilla_taillightbar_center_eu_bulb", ["ledPositionLightbar_2W"], [], "ledPositionLightbar_2W", "Center Position Light Bar",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lowhighbeam",
+          "$nodeRef":"rfs1", "$nodeX":"rfs1l", "$nodeY":"rfs3",
+          "$deformGroup":"taillightglass_M_break",
+          "$posX":0, "$posY":2.15, "$posZ":0.79,
+          "$rotX":0, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillightbar_glass_R", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_R_break", "deformMaterialBase":"scintilla_lights_eu", "deformMaterialDamaged":"scintilla_lights_eu"},
+         ["scintilla_taillightbar_R_eu", ["scintilla_fascia_R"]],
+
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillightbar_glass_L", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_L_break", "deformMaterialBase":"scintilla_lights_eu", "deformMaterialDamaged":"scintilla_lights_eu"},
+         ["scintilla_taillightbar_L_eu", ["scintilla_fascia_R"]],
+
+         {"deformGroup":"taillightglass_M_break", "deformMaterialBase":"scintilla_glass", "deformMaterialDamaged":"scintilla_glass_dmg"},
+         ["scintilla_taillightbar_glass_M", ["scintilla_fascia_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.5}],
+         {"deformGroup":"taillightglass_M_break", "deformMaterialBase":"scintilla_lights_eu", "deformMaterialDamaged":"scintilla_lights_eu"},
+         ["scintilla_taillightbar_M_eu", ["scintilla_fascia_R"]],
+         {"deformGroup":""},
+    ],
+},
+}

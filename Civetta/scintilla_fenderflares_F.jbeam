@@ -1,0 +1,153 @@
+{
+"scintilla_fenderflare_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Fender Flare",
+        "value":210,
+    },
+    "slotType" : "scintilla_fenderflare_FR",
+    "slots2": [
+        ["name",                  "allowTypes",              "denyTypes", "default", "description"],
+        ["scintilla_splitter_FR", ["scintilla_splitter_FR"], [],          "",        "Front Right Splitter"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_FR", ["scintilla_fender_R"]],
+    ],
+    "nodes": [
+         ["id",     "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.1},
+         {"group":["scintilla_fender_R", "scintilla_innerfender_FR"]}
+         ["fe3rrr",-1.01,  -1.671,  0.524],
+         ["fe4rrr",-1.01,  -1.407,  0.713],
+         ["fe5rrr",-1.01,  -1.117,  0.654],
+    ],
+},
+"scintilla_fenderflare_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Fender Flare",
+        "value":210,
+    },
+    "slotType" : "scintilla_fenderflare_FL",
+    "slots2": [
+        ["name",                  "allowTypes",              "denyTypes", "default", "description"],
+        ["scintilla_splitter_FL", ["scintilla_splitter_FL"], [],          "",        "Front Left Splitter"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_FL", ["scintilla_fender_L"]],
+    ],
+    "nodes": [
+         ["id",     "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.1},
+         {"group":["scintilla_fender_L", "scintilla_innerfender_FL"]}
+         ["fe3lll", 1.01,  -1.671,  0.524],
+         ["fe4lll", 1.01,  -1.407,  0.713],
+         ["fe5lll", 1.01,  -1.117,  0.654],
+
+    ],
+},
+"scintilla_fenderflare_FR_door": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Door Fender Flare",
+        "value":70,
+    },
+    "slotType" : "scintilla_fenderflare_FR_door",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_door_FR", ["scintilla_door_R"]],
+    ],
+    "nodes": [
+         ["id",  "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.5},
+         {"group":"scintilla_door_R"},
+         ["d4r",-1.01,  -1.055,  0.642],
+    ],
+},
+"scintilla_fenderflare_FL_door": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Door Fender Flare",
+        "value":70,
+    },
+    "slotType" : "scintilla_fenderflare_FL_door",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_door_FL", ["scintilla_door_L"]],
+    ],
+    "nodes": [
+         ["id",  "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.5},
+         {"group":"scintilla_door_L"},
+         ["d4l", 1.01,  -1.055,  0.642],
+    ],
+},
+"scintilla_fenderflare_FR_bumper": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Bumper Fender Flare",
+        "value":50,
+    },
+    "slotType" : "scintilla_sidemarker_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_bumper_FR", ["scintilla_bumper_F"]],
+    ],
+    "nodes": [
+         ["id",     "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.2},
+         {"group":"scintilla_bumper_F"},
+         ["fb1rrr",-1.01,  -1.676,  0.493],
+    ],
+},
+"scintilla_fenderflare_FL_bumper": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Bumper Fender Flare",
+        "value":50,
+    },
+    "slotType" : "scintilla_sidemarker_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_widebody_bumper_FL", ["scintilla_bumper_F"]],
+         ],
+    "nodes": [
+         ["id",     "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.2},
+         {"group":"scintilla_bumper_F"},
+         ["fb1lll", 1.01,  -1.676,  0.493],
+    ],
+},
+}

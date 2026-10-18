@@ -1,0 +1,137 @@
+{
+"scintilla_valance_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Valance",
+        "value":50,
+    },
+
+    "slotType" : "scintilla_valance_R",
+
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_rear_valance_stock", ["scintilla_fascia_R"]],
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+
+         //--REAR VALANCE--
+         {"group":"scintilla_fascia_R"},
+         {"nodeWeight":0.3},
+         ["rfs3", 0.0,    2.08,   0.7],
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+
+          //--TAILCONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //rear fascia main shape
+          {"beamSpring":301000,"beamDamp":20},
+          {"beamDeform":18000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["rfs1", "rfs3"],
+          ["rfs3", "rfs1r"],
+          ["rfs3", "rfs1l"],
+
+          //rigids
+          {"beamDeform":4760,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["rfs3", "rfs2"],
+          ["rfs3", "rfs2ll"],
+          ["rfs3", "rfs2rr"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:",  "id2:", "id3:"],
+            //rearfascia
+            {"groundModel":"plastic"},
+            {"group":"fascia_R"},
+            {"dragCoef":0},
+            ["rfs1l", "rfs3", "rfs1"],
+            ["rfs1",  "rfs3", "rfs1r"],
+            {"group":""},
+    ],
+},
+"scintilla_valance_R_perf": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Performance Rear Valance",
+        "value":150,
+    },
+
+    "slotType" : "scintilla_valance_R",
+
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_rear_valance_perf", ["scintilla_fascia_R"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         {"collision":true},
+         {"selfCollision":true},
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_PLASTIC"},
+
+         //--REAR VALANCE--
+         {"group":"scintilla_fascia_R"},
+         {"nodeWeight":0.3},
+         ["rfs3",  0.0,    2.13,   0.74],
+
+         //taillights
+         ["rfs3r",-0.6,    2.03,   0.622,  {"selfCollision":false}],
+         ["rfs3l", 0.6,    2.03,   0.622,  {"selfCollision":false}],
+    ],
+
+    "beams": [
+          ["id1:",  "id2:"],
+
+          //--TAILCONE--
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //rear fascia main shape
+          {"beamSpring":301000,"beamDamp":20},
+          {"beamDeform":18000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.1},
+          ["rfs1",  "rfs3"],
+          ["rfs3l", "rfs3"],
+          ["rfs3",  "rfs3r"],
+
+          //surficial crossing
+          {"deformLimitExpansion":""},
+          {"beamDeform":7560,"beamStrength":"FLT_MAX"},
+          ["rfs1l", "rfs3"],
+          ["rfs3l", "rfs1"],
+          ["rfs1",  "rfs3r"],
+          ["rfs1r", "rfs3"],
+
+          //rigids
+          {"beamDeform":4760,"beamStrength":"FLT_MAX"},
+          ["rfs3",  "rfs2"],
+          ["rfs3",  "rfs2ll"],
+          ["rfs3",  "rfs2rr"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:",  "id2:",  "id3:"],
+            //rearfascia
+            {"groundModel":"plastic"},
+            {"group":"fascia_R"},
+            {"dragCoef":0},
+            ["rfs1l", "rfs3l", "rfs3"],
+            ["rfs3",  "rfs3r", "rfs1r"],
+            ["rfs1l", "rfs3",  "rfs1"],
+            ["rfs1",  "rfs3",  "rfs1r"],
+            {"group":""},
+    ],
+},
+}

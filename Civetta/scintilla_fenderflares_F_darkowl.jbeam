@@ -1,0 +1,314 @@
+{
+"scintilla_fenderflare_FR_darkowl": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Front Right Fender Flare",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Dark Owl"
+            }
+        },
+        "value":210,
+    },
+    "slotType" : "scintilla_fenderflare_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_darkowl_fender_skirt_R", ["scintilla_fenderflare_FR"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":0.2},
+         {"group":"scintilla_fenderflare_FR"}
+         ["fff1r",-0.956, -1.899,  0.489],
+         ["fff2r",-1.013, -1.654,  0.522],
+         ["fff3r",-0.964, -1.543,  0.796],
+         ["fff4r",-1.013, -1.458,  0.689],
+         ["fff5r",-1.013, -1.213,  0.702],
+         ["fff6r",-0.953, -1.06,   0.823],
+         {"collision":false},
+         {"selfCollision":false},
+         ["fff7r",-0.866, -1.491,  0.722,  {"group":""}],
+    ],
+     "beams": [
+          ["id1:",   "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //main shape
+          {"beamSpring":101000,"beamDamp":20},
+          {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+            ["fff2r",  "fff4r"],
+            ["fff4r",  "fff5r"],
+            ["fff1r",  "fff3r"],
+            ["fff3r",  "fff6r"],
+
+            ["fff1r",  "fff2r"],
+            ["fff3r",  "fff4r"],
+            ["fff6r",  "fff5r"],
+          {"deformLimitExpansion":""},
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          //cross
+            ["fff5r",  "fff3r"],
+            ["fff4r",  "fff6r"],
+            ["fff4r",  "fff1r"],
+            ["fff2r",  "fff3r"],
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          //rigids
+            ["fff1r",  "fff6r"],
+            ["fff5r",  "fff2r"],
+          //rigidifier
+            ["fff7r",  "fff6r"],
+            ["fff7r",  "fff5r"],
+            ["fff7r",  "fff3r"],
+            ["fff7r",  "fff4r"],
+            ["fff7r",  "fff2r"],
+            ["fff7r",  "fff1r"],
+
+          //attach
+          {"beamDeform":3000,"beamStrength":8000},
+          {"breakGroup":"fenderflare_FR_a"},
+            ["fff1r",  "fe2rr"],
+            ["fe2rr",  "fff2r"],
+            ["fff2r",  "fe3rrr"],
+            ["fe3rrr", "fff1r"],
+            ["fe3rrr", "fff4r"],
+            ["fff3r",  "fe3rrr"],
+            ["fe2rr",  "fff4r"],
+            ["fe2rr",  "fff3r"],
+            ["fe3rr",  "fff1r"],
+            ["fe3rr",  "fff2r"],
+          {"breakGroup":"fenderflare_FR_b"},
+            ["fe4rrr", "fff5r"],
+            ["fff5r",  "fe4rr"],
+            ["fe4rr",  "fff6r"],
+            ["fff6r",  "fe4rrr"],
+            ["fff5r",  "fe5rrr"],
+            ["fe5rrr", "fff6r"],
+            ["fff6r",  "fe5rr"],
+            ["fe5rr",  "fff5r"],
+            ["fe4rrr", "fff4r"],
+            ["fe4rrr", "fff3r"],
+            ["fff3r",  "fe4rr"],
+          {"breakGroup":""},
+
+          //anti clipping
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":101000,"beamDamp":20},
+          {"beamDeform":7000,"beamStrength":425000},
+          {"breakGroup":"fenderflare_R_supportBeams"},
+          //to quarter panels
+          {"beamPrecompression":0.9},
+            ["fe2r",   "fff1r"],
+            ["fe3r",   "fff2r"],
+            ["fe4r",   "fff3r"],
+            ["fe4r",   "fff4r"],
+          {"beamPrecompression":1},
+            ["fe5rr",  "fff6r"],
+            ["fe5rrr", "fff5r"],
+            ["fe4r",   "fff6r"],
+            ["fe4r",   "fff5r"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:",  "id2:",  "id3:"],
+        {"dragCoef":12.9},
+        {"groundModel":"plastic"},
+            ["fff6r", "fff5r", "fff3r"],
+            ["fff3r", "fff5r", "fff4r"],
+            ["fff3r", "fff4r", "fff2r"],
+            ["fff2r", "fff1r", "fff3r"],
+    ],
+},
+
+"scintilla_fenderflare_FL_darkowl": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Front Left Fender Flare",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Dark Owl"
+            }
+        },
+        "value":210,
+    },
+    "slotType" : "scintilla_fenderflare_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_darkowl_fender_skirt_L", ["scintilla_fenderflare_FL"]],
+    ],
+    "nodes": [
+         ["id",    "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":0.2},
+         {"group":"scintilla_fenderflare_FL"}
+         ["fff1l", 0.956, -1.899,  0.489],
+         ["fff2l", 1.013, -1.654,  0.522],
+         ["fff3l", 0.964, -1.543,  0.796],
+         ["fff4l", 1.013, -1.458,  0.689],
+         ["fff5l", 1.013, -1.213,  0.702],
+         ["fff6l", 0.953, -1.06,   0.823],
+         {"collision":false},
+         {"selfCollision":false},
+         ["fff7l", 0.866, -1.491,  0.722,  {"group":""}],
+    ],
+     "beams": [
+          ["id1:",   "id2:"],
+           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //main shape
+          {"beamSpring":101000,"beamDamp":20},
+          {"beamDeform":9000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+            ["fff2l",  "fff4l"],
+            ["fff4l",  "fff5l"],
+            ["fff1l",  "fff3l"],
+            ["fff3l",  "fff6l"],
+
+            ["fff1l",  "fff2l"],
+            ["fff3l",  "fff4l"],
+            ["fff6l",  "fff5l"],
+          {"deformLimitExpansion":""},
+          {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+          //cross
+            ["fff5l",  "fff3l"],
+            ["fff4l",  "fff6l"],
+            ["fff4l",  "fff1l"],
+            ["fff2l",  "fff3l"],
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          //rigids
+            ["fff1l",  "fff6l"],
+            ["fff5l",  "fff2l"],
+          //rigidifier
+            ["fff7l",  "fff6l"],
+            ["fff7l",  "fff5l"],
+            ["fff7l",  "fff3l"],
+            ["fff7l",  "fff4l"],
+            ["fff7l",  "fff2l"],
+            ["fff7l",  "fff1l"],
+
+          //attach
+          {"beamDeform":3000,"beamStrength":8000},
+          {"breakGroup":"fenderflare_FL_a"},
+            ["fff1l",  "fe2ll"],
+            ["fe2ll",  "fff2l"],
+            ["fff2l",  "fe3lll"],
+            ["fe3lll", "fff1l"],
+            ["fe3lll", "fff4l"],
+            ["fff3l",  "fe3lll"],
+            ["fe2ll",  "fff4l"],
+            ["fe2ll",  "fff3l"],
+            ["fe3ll",  "fff1l"],
+            ["fe3ll",  "fff2l"],
+          {"breakGroup":"fenderflare_FL_b"},
+            ["fe4lll", "fff5l"],
+            ["fff5l",  "fe4ll"],
+            ["fe4ll",  "fff6l"],
+            ["fff6l",  "fe4lll"],
+            ["fff5l",  "fe5lll"],
+            ["fe5lll", "fff6l"],
+            ["fff6l",  "fe5ll"],
+            ["fe5ll",  "fff5l"],
+            ["fe4lll", "fff4l"],
+            ["fe4lll", "fff3l"],
+            ["fff3l",  "fe4ll"],
+          {"breakGroup":""},
+
+          //anti clipping
+          {"beamType":"|SUPPORT", "beamLongBound":4},
+          {"beamSpring":101000,"beamDamp":20},
+          {"beamDeform":7000,"beamStrength":425000},
+          {"breakGroup":"fenderflare_L_supportBeams"},
+          //to quarter panels
+          {"beamPrecompression":0.9},
+            ["fe2l",   "fff1l"],
+            ["fe3l",   "fff2l"],
+            ["fe4l",   "fff3l"],
+            ["fe4l",   "fff4l"],
+          {"beamPrecompression":1},
+            ["fe5ll",  "fff6l"],
+            ["fe5lll", "fff5l"],
+            ["fe4l",   "fff6l"],
+            ["fe4l",   "fff5l"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:",  "id2:",  "id3:"],
+        {"dragCoef":12.9},
+        {"groundModel":"plastic"},
+            ["fff3l", "fff5l", "fff6l"],
+            ["fff5l", "fff3l", "fff4l"],
+            ["fff4l", "fff3l", "fff2l"],
+            ["fff2l", "fff3l", "fff1l"],
+    ],
+},
+
+"scintilla_fenderflare_FR_darkowl_door": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Front Right Door Fender Flare",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Dark Owl"
+            }
+        },
+        "value":70,
+    },
+    "slotType" : "scintilla_fenderflare_FR_door",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_darkowl_door_panel_R", ["scintilla_door_R"]],
+    ],
+    "nodes": [
+         ["id",  "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.5},
+         {"group":"scintilla_door_R"},
+         ["d4r",-1.01,  -1.055,  0.642],
+         ["d1r",-1.01,  -0.949,  0.18],
+    ],
+},
+"scintilla_fenderflare_FL_darkowl_door": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Front Left Door Fender Flare",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Dark Owl"
+            }
+        },
+        "value":70,
+    },
+    "slotType" : "scintilla_fenderflare_FL_door",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["scintilla_darkowl_door_panel_L", ["scintilla_door_L"]],
+    ],
+    "nodes": [
+         ["id",  "posX", "posY", "posZ"],
+         //--FENDER--
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.5},
+         {"group":"scintilla_door_L"},
+         ["d4l", 1.01,  -1.055,  0.642],
+         ["d1l", 1.01,  -0.949,  0.18],
+    ],
+},
+}
