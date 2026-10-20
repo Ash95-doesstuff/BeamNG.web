@@ -1,0 +1,233 @@
+{"scintilla_bumpersupport_F":
+{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Bumper Support",
+        "value":100,
+    },
+
+    "slotType" :"scintilla_bumpersupport_F",
+
+    "slots2":[
+        ["name",               "allowTypes",           "denyTypes", "default",            "description"],
+        ["scintilla_bumper_F", ["scintilla_bumper_F"], [],          "scintilla_bumper_F", "Front Bumper"],
+    ],
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["scintilla_front_subframe_A", ["scintilla_bumpersupport_F"]],
+    ],
+   "torsionbars":[
+       ["id1:", "id2:", "id3:", "id4:"],
+        //upbend enticer
+        {"spring":50000, "damp":1, "deform":30000, "strength":100000},
+        ["fbs5", "fx1l", "fx1r", "fx4r"],
+        ["fbs5", "fx1r", "fx1l", "fx4l"],
+    ],
+    "nodes":[
+         ["id",      "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //--FRONT BUMPER SUPPORT--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeWeight":0.3}
+         {"group":"scintilla_bumpersupport_F"},
+         ["fbs1rr", -0.69,  -2.1,    0.185],
+         ["fbs1r",  -0.35,  -2.164,  0.155],
+         ["fbs1",    0.0,   -2.195,  0.155],
+         ["fbs1l",   0.35,  -2.164,  0.155],
+         ["fbs1ll",  0.69,  -2.1,    0.185],
+
+         ["fbs2rrr",-0.891, -1.722,  0.15],
+         ["fbs2rr", -0.469, -1.655,  0.2,    {"couplerTag":"bumper_support_FR2", "couplerStrength":110000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"bumper_support_FR2"}],
+         ["fbs2ll",  0.469, -1.655,  0.2,    {"couplerTag":"bumper_support_FL2", "couplerStrength":110000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"bumper_support_FL2"}],
+         ["fbs2lll", 0.891, -1.722,  0.15],
+
+         ["fbs3r",  -0.4,   -2.21,   0.35,   {"couplerTag":"bumper_support_FR1", "couplerStrength":110000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"bumper_support_FR1"}],
+         ["fbs3l",   0.4,   -2.21,   0.35,   {"couplerTag":"bumper_support_FL1", "couplerStrength":110000, "couplerRadius":0.1, "couplerStartRadius":0.1, "couplerLock":true, "breakGroup":"bumper_support_FL1"}],
+
+         ["fbs4rrr",-0.92,  -1.694,  0.481],
+         ["fbs4lll", 0.92,  -1.694,  0.481],
+         {"group":""},
+
+         //rigidifer
+         {"nodeWeight":1.0}
+         ["fbs5",    0.0,   -1.868,  0.5,    {"selfCollision":false, "collision":false,"group":""}],
+        ],
+
+    "beams":[
+          ["id1:",    "id2:"],
+          //--FRONT BUMPER SUPPORT--
+
+          //nosecone support main shape
+          {"beamSpring":301000,"beamDamp":5},
+          {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+          ["fbs2lll", "fbs1ll"],
+          ["fbs1ll",  "fbs1l"],
+          ["fbs1l",   "fbs1"],
+          ["fbs1",    "fbs1r"],
+          ["fbs1r",   "fbs1rr"],
+          ["fbs1rr",  "fbs2rrr"],
+          ["fbs1l",   "fbs3l"],
+          ["fbs1r",   "fbs3r"],
+          ["fbs2lll", "fbs2ll"],
+          ["fbs2rrr", "fbs2rr"],
+          ["fbs2lll", "fbs4lll"],
+          ["fbs2rrr", "fbs4rrr"],
+          ["fbs4rrr", "fbs3r"],
+          ["fbs4lll", "fbs3l"],
+
+          //rigids
+          {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          //corner
+          ["fbs3l",   "fbs1"],
+          ["fbs3l",   "fbs1ll"],
+          ["fbs3r",   "fbs1"],
+          ["fbs3r",   "fbs1rr"],
+          ["fbs4lll", "fbs1ll"],
+          ["fbs4lll", "fbs2ll"],
+          ["fbs4rrr", "fbs1rr"],
+          ["fbs4rrr", "fbs2rr"],
+          ["fbs2rr",  "fbs1rr"],
+          ["fbs2ll",  "fbs1ll"],
+          ["fbs4lll", "fbs1l"],
+          ["fbs4rrr", "fbs1r"],
+          ["fbs3r",   "fbs2rrr"],
+          ["fbs3l",   "fbs2lll"],
+          ["fbs3l",   "fbs1r"],
+          ["fbs3r",   "fbs1l"],
+
+          //widthwise
+          ["fbs1rr",  "fbs1"],
+          ["fbs1r",   "fbs1l"],
+          ["fbs1ll",  "fbs1"],
+          ["fbs2lll", "fbs1l"],
+          ["fbs1r",   "fbs2rrr"],
+
+          //rigidifier
+          ["fbs5",    "fbs1"],
+          ["fbs5",    "fbs1l"],
+          ["fbs5",    "fbs3l"],
+          ["fbs5",    "fbs1ll"],
+          ["fbs5",    "fbs1r"],
+          ["fbs5",    "fbs3r"],
+          ["fbs5",    "fbs1rr"],
+          ["fbs5",    "fbs2rrr"],
+          ["fbs5",    "fbs2lll"],
+          ["fbs5",    "fbs4rrr"],
+          ["fbs5",    "fbs4lll"],
+          ["fbs5",    "fbs2ll"],
+          ["fbs5",    "fbs2rr"],
+
+          //attach
+          {"beamDeform":4150,"beamStrength":91000},
+          {"breakGroup":"bumpersupport_FR"},
+          ["fbs4rrr", "f13rr"],
+          ["fbs4rrr", "f5rr"],
+          ["fbs4rrr", "fx3r"],
+          ["fbs2rrr", "f13rr"],
+          ["fbs3r",   "fx2r",    {"beamDeform":15150,"beamStrength":"FLT_MAX"}],
+          {"breakGroup":"bumpersupport_FL"},
+          ["fbs4lll", "f13ll"],
+          ["fbs4lll", "f5ll"],
+          ["fbs4lll", "fx3l"],
+          ["fbs2lll", "f13ll"],
+          ["fbs3l",   "fx2l",    {"beamDeform":15150,"beamStrength":"FLT_MAX"}],
+
+          //enticers
+          {"beamDeform":65000,"beamStrength":"FLT_MAX"},
+          ["fx1r",    "fbs3r",   {"breakGroup":"bumpersupport_FR"}],
+          ["fx1l",    "fbs3l",   {"breakGroup":"bumpersupport_FL"}],
+          {"breakGroup":""},
+
+          //torsionbar break
+          {"beamSpring":0,"beamDamp":0},
+          ["fbs5",    "fx1r",    {"breakGroup":"bumpersupport_FR"}],
+          ["fbs5",    "fx1l",    {"breakGroup":"bumpersupport_FL"}],
+
+          //limiters
+          {"beamPrecompression":0.7, "beamType":"|SUPPORT", "beamLongBound":2},
+          {"beamSpring":201000,"beamDamp":10},
+          {"beamDeform":5000, "beamStrength":"FLT_MAX"},
+          {"breakGroup":"bumperSupport_F_supportBeams"},
+          ["fbs4rrr", "f13rr"],
+          ["fbs2rrr", "f13rr"],
+          ["fbs4lll", "f13ll"],
+          ["fbs2lll", "f13ll"],
+
+          ["fbs1r",   "bbf2r"],
+          ["fbs1l",   "bbf2l"],
+          ["fbs1",    "bbf1"],
+          ["fbs1",    "bbf2"],
+
+          ["fbs2ll",  "fx1r"],
+          ["fbs2rr",  "fx1l"],
+          ["fbs2ll",  "fx3r"],
+          ["fbs2rr",  "fx3l"],
+
+          ["fbs2rrr", "fx1r"],
+          ["fbs1rr",  "fx1r"],
+          ["fbs4rrr", "fx3r"],
+          ["fbs1ll",  "fx1l"],
+          ["fbs2lll", "fx1l"],
+          ["fbs4lll", "fx3l"],
+          ["fbs2lll", "fx3l"],
+          ["fx1l",    "fbs4lll"],
+          ["fbs2rrr", "fx3r"],
+          ["fbs4rrr", "fx1r"],
+          ["fbs1r",   "fx1r"],
+          ["fbs1",    "fx1r"],
+          ["fbs1l",   "fx1l"],
+          ["fbs1",    "fx1l"],
+          ["fbs3l",   "fx1l"],
+          ["fbs3r",   "fx1r"],
+          ["fbs3r",   "fx3r"],
+          ["fbs3l",   "fx3l"],
+
+          ["fbs1l",   "bbf2"],
+          ["fbs1",    "fe1l"],
+          ["fbs1",    "bbf2r"],
+          ["fbs1r",   "bbf2"],
+
+          ["fbs2rr",  "fx2r"],
+          ["fbs2rr",  "fx3r"],
+          ["fbs2rr",  "fx2l"],
+          ["fbs2ll",  "fx2l"],
+          ["fbs2ll",  "fx3l"],
+          ["fbs2ll",  "fx2r"],
+
+          ["fbs3r",   "bbf2r"],
+          ["fbs3r",   "bbf2"],
+          ["fbs3l",   "bbf2l"],
+          ["fbs3l",   "bbf2"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+
+    "triangles":[
+        ["id1:",    "id2:",    "id3:"],
+        {"groundModel":"metal"},
+        //nosecone support
+        {"dragCoef":0},
+        {"group":"scintilla_bumpersupport_F"},
+        {"triangleType":"NONCOLLIDABLE"}
+        ["fbs3r",   "fbs1rr",  "fbs1r"],
+        ["fbs3r",   "fbs1r",   "fbs1"],
+        ["fbs1",    "fbs1l",   "fbs3l"],
+        ["fbs3l",   "fbs1l",   "fbs1ll"],
+        ["fbs1ll",  "fbs2lll", "fbs4lll"],
+        ["fbs4rrr", "fbs2rrr", "fbs1rr"],
+        ["fbs2rr",  "fbs2rrr", "fbs4rrr"],
+        ["fbs4lll", "fbs2lll", "fbs2ll"],
+        ["fbs4rrr", "fbs1rr",  "fbs3r"],
+        ["fbs3l",   "fbs1ll",  "fbs4lll"],
+        ["fbs1rr",  "fbs2rrr", "fbs2rr"],
+        ["fbs1ll",  "fbs2ll",  "fbs2lll"],
+        {"triangleType":"NORMALTYPE"}
+        {"group":""},
+        ],
+},
+}
