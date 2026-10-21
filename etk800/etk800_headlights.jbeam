@@ -1,0 +1,693 @@
+{
+"etk800_headlight_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Xenon Right Headlight",
+        "value":700,
+    },
+    "slotType" : "etk800_headlight_R",
+    "slots2": [
+        ["name",                    "allowTypes",                "denyTypes", "default",                 "description"],
+        ["etk800_headlightpanel_R", ["etk800_headlightpanel_R"], [],          "etk800_headlightpanel_R", "Right Headlight Access Panel"],
+        ["etk800_headlight_R_low_bulb", ["headlightBulb_xenon_35W_projector"], [], "headlightBulb_xenon_35W_projector", "Low Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4r", "$nodeX":"he3r", "$nodeY":"he2r",
+          "$deformGroup":"headlightglass_R_break",
+          "$posX":-0.740, "$posY":-1.783, "$posZ":0.717,
+          "$rotX":-0.57, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_R_high_bulb", ["headlightBulb_halogen_60W"], [], "headlightBulb_halogen_60W", "High Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "highbeam_filament",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4r", "$nodeX":"he3r", "$nodeY":"he2r",
+          "$deformGroup":"headlightglass_R_break",
+          "$posX":-0.620, "$posY":-1.872, "$posZ":0.714,
+          "$rotX":0, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_R_signal_bulb", ["incandescent_amber_21W"], [], "incandescent_amber_21W", "Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "signal_R_filament",
+          "$cookieName":"art/special/BNG_light_cookie_blinker_r_incandescent.color.png",
+          "$nodeRef":"he4r", "$nodeX":"he3r", "$nodeY":"he2r",
+          "$deformGroup":"headlightglass_R_break",
+          "$posX":-0.496, "$posY":-2.054, "$posZ":0.722,
+          "$rotX":0, "$rotY":0, "$rotZ":185
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_headlightframe_R", ["etk800_headlight_R"]],
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"etk800_glass", "deformMaterialDamaged":"etk800_glass_dmg"},
+         ["etk800_headlightglass_R", ["etk800_headlight_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.4}],
+         {"deformGroup":""},
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"etk800_lights", "deformMaterialDamaged":"etk800_lights_dmg"},
+         ["etk800_headlight_R", ["etk800_headlight_R"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //right
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.6},
+         {"group":"etk800_headlight_R"},
+         ["he1r",-0.50,  -2.10,   0.76],
+         ["he3r",-0.49,  -2.11,   0.72],
+         ["he2r",-0.78,  -1.84,   0.78],
+         ["he4r",-0.78,  -1.88,   0.68],
+         //{"selfCollision":false}
+         ["he5r",-0.60,  -1.76,   0.72],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":1001000,"beamDamp":60},
+          {"beamDeform":12000,"beamStrength":62000},
+          //headlight main shape
+          {"deformGroup":"headlightglass_R_break", "deformationTriggerRatio":0.05},
+          //r
+          {"deformLimitExpansion":1.1},
+          ["he1r", "he2r"],
+          ["he3r", "he4r"],
+          ["he1r", "he3r"],
+          ["he2r", "he4r"],
+
+          ["he1r", "he4r"],
+          ["he2r", "he3r"],
+
+          ["he1r", "he5r"],
+          ["he2r", "he5r"],
+          ["he3r", "he5r"],
+          ["he4r", "he5r"],
+
+          //attach
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":24000},
+          //r
+          {"deformLimitExpansion":""},
+          {"breakGroup":"headlight_R"},
+          ["he5r", "f15rr"],
+          ["he5r", "f15r"],
+          ["he2r", "f15rr"],
+          ["he2r", "f15r"],
+          ["he4r", "f15rr"],
+
+          {"beamDeform":3000,"beamStrength":24000},
+          {"breakGroup":"headlight_R"},
+          ["he1r", "f15r"],
+          ["he1r", "f15rr"],
+          ["he3r", "f15r"],
+          ["he3r", "f13rr"],
+          //["he1r","f13rr"],
+
+          {"beamDeform":1500,"beamStrength":46000},
+          ["he2r", "f18r"],
+          ["he4r", "f18r"],
+          ["he3r", "f11rr"],
+          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+
+          //headlight support beams
+          {"beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamSpring":601000,"beamDamp":90},
+          {"beamDeform":13000,"beamStrength":330000},
+          {"optional":true},
+          {"breakGroup":"headlight_R_supportBeams"},
+          ["he2r", "h4"],
+          ["he3r", "h4r"],
+          ["he5r", "h4rr"],
+          {"breakGroup":""},
+          {"optional":false},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            //right headlight
+            {"groundModel":"plastic"},
+            {"group":"etk800_headlight_R"},
+            {"dragCoef":8.75},
+            ["he3r", "he1r", "he4r"],
+            ["he4r", "he1r", "he2r"],
+
+            {"triangleType":"NONCOLLIDABLE"},
+            ["he4r", "he2r", "he5r"],
+            ["he1r", "he5r", "he2r"],
+            ["he3r", "he5r", "he1r"],
+            ["he4r", "he5r", "he3r"],
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+    ],
+},
+"etk800_headlight_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Xenon Left Headlight",
+        "value":700,
+    },
+    "slotType" : "etk800_headlight_L",
+    "slots2": [
+        ["name",                    "allowTypes",                "denyTypes", "default",                 "description"],
+        ["etk800_headlightpanel_L", ["etk800_headlightpanel_L"], [],          "etk800_headlightpanel_L", "Left Headlight Access Panel"],
+        ["etk800_headlight_L_low_bulb", ["headlightBulb_xenon_35W_projector"], [], "headlightBulb_xenon_35W_projector", "Low Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4l", "$nodeX":"he3l", "$nodeY":"he2l",
+          "$deformGroup":"headlightglass_L_break",
+          "$posX":0.740, "$posY":-1.783, "$posZ":0.717,
+          "$rotX":-0.57, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_L_high_bulb", ["headlightBulb_halogen_60W"], [], "headlightBulb_halogen_60W", "High Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "highbeam_filament",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4l", "$nodeX":"he3l", "$nodeY":"he2l",
+          "$deformGroup":"headlightglass_L_break",
+          "$posX":0.620, "$posY":-1.872, "$posZ":0.714,
+          "$rotX":0, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_L_signal_bulb", ["incandescent_amber_21W"], [], "incandescent_amber_21W", "Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "signal_L_filament",
+          "$lightPattern": "LHD"
+          "$cookieName":"art/special/BNG_light_cookie_blinker_l_incandescent.color.png",
+          "$nodeRef":"he4l", "$nodeX":"he3l", "$nodeY":"he2l",
+          "$deformGroup":"headlightglass_L_break",
+          "$posX":0.496, "$posY":-2.054, "$posZ":0.722,
+          "$rotX":0, "$rotY":0, "$rotZ":175
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_headlightframe_L", ["etk800_headlight_L"]],
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"etk800_glass", "deformMaterialDamaged":"etk800_glass_dmg"},
+         ["etk800_headlightglass_L", ["etk800_headlight_L"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.6}],
+         {"deformGroup":""},
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"etk800_lights", "deformMaterialDamaged":"etk800_lights_dmg"},
+         ["etk800_headlight_L", ["etk800_headlight_L"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //left
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.6},
+         {"group":"etk800_headlight_L"},
+         ["he1l", 0.50,  -2.10,   0.76],
+         ["he3l", 0.49,  -2.11,   0.72],
+         ["he2l", 0.78,  -1.84,   0.78],
+         ["he4l", 0.78,  -1.88,   0.68],
+         //{"selfCollision":false}
+         ["he5l", 0.60,  -1.76,   0.72],
+         {"group":""},
+
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":1001000,"beamDamp":60},
+          {"beamDeform":12000,"beamStrength":128000},
+          //headlight main shape
+          {"deformGroup":"headlightglass_L_break", "deformationTriggerRatio":0.05},
+          //l
+          {"deformLimitExpansion":1.1},
+          ["he1l", "he2l"],
+          ["he3l", "he4l"],
+          ["he1l", "he3l"],
+          ["he2l", "he4l"],
+
+          ["he1l", "he4l"],
+          ["he2l", "he3l"],
+
+          ["he1l", "he5l"],
+          ["he2l", "he5l"],
+          ["he3l", "he5l"],
+          ["he4l", "he5l"],
+          //attach
+          {"deformLimitExpansion":""},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":28000},
+          //l
+          {"breakGroup":"headlight_L"},
+          ["he5l", "f15ll"],
+          ["he5l", "f15l"],
+          ["he2l", "f15ll"],
+          ["he2l", "f15l"],
+          ["he4l", "f15ll"],
+
+          {"beamDeform":3000,"beamStrength":28000},
+          {"breakGroup":"headlight_L"},
+          ["he1l", "f15ll"],
+          ["he1l", "f15l"],
+          ["he3l", "f15l"],
+          ["he3l", "f13ll"],
+          //["he1l","f13ll"],
+
+          {"beamDeform":1500,"beamStrength":46000},
+          ["he2l", "f18l"],
+          ["he4l", "f18l"],
+          ["he3l", "f11ll"],
+          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+
+          //headlight support beams
+          {"beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamSpring":601000,"beamDamp":90},
+          {"beamDeform":13000,"beamStrength":330000},
+          {"optional":true},
+          {"breakGroup":"headlight_L_supportBeams"},
+          ["he2l", "h4"],
+          ["he3l", "h4l"],
+          ["he5l", "h4ll"],
+          {"optional":false},
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            //left headlight
+            {"groundModel":"plastic"},
+            {"group":"etk800_headlight_L"},
+            {"dragCoef":8.75},
+            ["he1l", "he3l", "he4l"],
+            ["he1l", "he4l", "he2l"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["he2l", "he4l", "he5l"],
+            ["he5l", "he1l", "he2l"],
+            ["he5l", "he3l", "he1l"],
+            ["he5l", "he4l", "he3l"],
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+    ],
+},
+"etk800_headlight_halogen_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Halogen Right Headlight",
+        "value":700,
+    },
+    "slotType" : "etk800_headlight_R",
+    "slots2": [
+        ["name",                    "allowTypes",                "denyTypes", "default",                 "description"],
+        ["etk800_headlightpanel_R", ["etk800_headlightpanel_R"], [],          "etk800_headlightpanel_R", "Right Headlight Access Panel"],
+        ["etk800_headlight_halogen_R_low_bulb", ["headlightBulb_halogen_55W_projector"], [], "headlightBulb_halogen_55W_projector", "Low Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam_filament",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4r", "$nodeX":"he3r", "$nodeY":"he2r",
+          "$deformGroup":"headlightglass_R_break",
+          "$posX":-0.736, "$posY":-1.780, "$posZ":0.714,
+          "$rotX":-0.57, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_halogen_R_high_bulb", ["headlightBulb_halogen_60W"], [], "headlightBulb_halogen_60W", "High Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "highbeam_filament",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4r", "$nodeX":"he3r", "$nodeY":"he2r",
+          "$deformGroup":"headlightglass_R_break",
+          "$posX":-0.620, "$posY":-1.872, "$posZ":0.714,
+          "$rotX":0, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_halogen_R_signal_bulb", ["incandescent_amber_21W"], [], "incandescent_amber_21W", "Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "signal_R_filament",
+          "$cookieName":"art/special/BNG_light_cookie_blinker_r_incandescent.color.png",
+          "$nodeRef":"he4r", "$nodeX":"he3r", "$nodeY":"he2r",
+          "$deformGroup":"headlightglass_R_break",
+          "$posX":-0.496, "$posY":-2.054, "$posZ":0.722,
+          "$rotX":0, "$rotY":0, "$rotZ":185
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_headlightframe_R", ["etk800_headlight_R"]],
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"etk800_glass", "deformMaterialDamaged":"etk800_glass_dmg"},
+         ["etk800_headlightglass_halogen_R", ["etk800_headlight_R"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.4}],
+         {"deformGroup":""},
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"etk800_lights", "deformMaterialDamaged":"etk800_lights_dmg"},
+         ["etk800_headlight_halogen_R", ["etk800_headlight_R"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //right
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.6},
+         {"group":"etk800_headlight_R"},
+         ["he1r",-0.50,  -2.10,   0.76],
+         ["he3r",-0.49,  -2.11,   0.72],
+         ["he2r",-0.78,  -1.84,   0.78],
+         ["he4r",-0.78,  -1.88,   0.68],
+         //{"selfCollision":false}
+         ["he5r",-0.60,  -1.76,   0.72],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":1001000,"beamDamp":60},
+          {"beamDeform":12000,"beamStrength":62000},
+          //headlight main shape
+          {"deformGroup":"headlightglass_R_break", "deformationTriggerRatio":0.05},
+          //r
+          {"deformLimitExpansion":1.1},
+          ["he1r", "he2r"],
+          ["he3r", "he4r"],
+          ["he1r", "he3r"],
+          ["he2r", "he4r"],
+
+          ["he1r", "he4r"],
+          ["he2r", "he3r"],
+
+          ["he1r", "he5r"],
+          ["he2r", "he5r"],
+          ["he3r", "he5r"],
+          ["he4r", "he5r"],
+
+          //attach
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":24000},
+          //r
+          {"deformLimitExpansion":""},
+          {"breakGroup":"headlight_R"},
+          ["he5r", "f15rr"],
+          ["he5r", "f15r"],
+          ["he2r", "f15rr"],
+          ["he2r", "f15r"],
+          ["he4r", "f15rr"],
+
+          {"beamDeform":3000,"beamStrength":24000},
+          {"breakGroup":"headlight_R"},
+          ["he1r", "f15r"],
+          ["he1r", "f15rr"],
+          ["he3r", "f15r"],
+          ["he3r", "f13rr"],
+          //["he1r","f13rr"],
+
+          {"beamDeform":1500,"beamStrength":46000},
+          ["he2r", "f18r"],
+          ["he4r", "f18r"],
+          ["he3r", "f11rr"],
+          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+
+          //headlight support beams
+          {"beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamSpring":601000,"beamDamp":90},
+          {"beamDeform":13000,"beamStrength":330000},
+          {"breakGroup":"headlight_R_supportBeams"},
+          {"optional":true},
+          ["he2r", "h4"],
+          ["he3r", "h4r"],
+          ["he5r", "h4rr"],
+          {"optional":false},
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            //right headlight
+            {"groundModel":"plastic"},
+            {"group":"etk800_headlight_R"},
+            {"dragCoef":8.75},
+            ["he3r", "he1r", "he4r"],
+            ["he4r", "he1r", "he2r"],
+
+            {"triangleType":"NONCOLLIDABLE"},
+            ["he4r", "he2r", "he5r"],
+            ["he1r", "he5r", "he2r"],
+            ["he3r", "he5r", "he1r"],
+            ["he4r", "he5r", "he3r"],
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+    ],
+},
+"etk800_headlight_halogen_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Halogen Left Headlight",
+        "value":700,
+    },
+    "slotType" : "etk800_headlight_L",
+    "slots2": [
+        ["name",                    "allowTypes",                "denyTypes", "default",                 "description"],
+        ["etk800_headlightpanel_L", ["etk800_headlightpanel_L"], [],          "etk800_headlightpanel_L", "Left Headlight Access Panel"],
+        ["etk800_headlight_halogen_L_low_bulb", ["headlightBulb_halogen_55W_projector"], [], "headlightBulb_halogen_55W_projector", "Low Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "lowhighbeam_filament",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4l", "$nodeX":"he3l", "$nodeY":"he2l",
+          "$deformGroup":"headlightglass_L_break",
+          "$posX":0.736, "$posY":-1.780, "$posZ":0.714,
+          "$rotX":-0.57, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_halogen_L_high_bulb", ["headlightBulb_halogen_60W"], [], "headlightBulb_halogen_60W", "High Beam",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "highbeam_filament",
+          "$lightPattern": "LHD"
+          "$nodeRef":"he4l", "$nodeX":"he3l", "$nodeY":"he2l",
+          "$deformGroup":"headlightglass_L_break",
+          "$posX":0.620, "$posY":-1.872, "$posZ":0.714,
+          "$rotX":0, "$rotY":0, "$rotZ":180
+        }
+        }],
+        ["etk800_headlight_halogen_L_signal_bulb", ["incandescent_amber_21W"], [], "incandescent_amber_21W", "Signal",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric": "signal_L_filament",
+          "$cookieName":"art/special/BNG_light_cookie_blinker_l_incandescent.color.png",
+          "$nodeRef":"he4l", "$nodeX":"he3l", "$nodeY":"he2l",
+          "$deformGroup":"headlightglass_L_break",
+          "$posX":0.496, "$posY":-2.054, "$posZ":0.722,
+          "$rotX":0, "$rotY":0, "$rotZ":175
+        }
+        }]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etk800_headlightframe_L", ["etk800_headlight_L"]],
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"etk800_glass", "deformMaterialDamaged":"etk800_glass_dmg"},
+         ["etk800_headlightglass_halogen_L", ["etk800_headlight_L"],[]{"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.6}],
+         {"deformGroup":""},
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"etk800_lights", "deformMaterialDamaged":"etk800_lights_dmg"},
+         ["etk800_headlight_halogen_L", ["etk800_headlight_L"]],
+         {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        {
+            "lightInnerAngle":70,
+            "lightOuterAngle":80,
+            "lightColor":{"r":235, "g":235, "b":175, "a":255},
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":true,
+            "flareName":"vehicleHeadLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
+            "texSize":512,
+            "shadowSoftness":0.5,
+        },
+     ],
+    "nodes": [
+         ["id",   "posX", "posY", "posZ"],
+         //--HEADLIGHT--
+         //left
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":0.5},
+         {"nodeWeight":0.6},
+         {"group":"etk800_headlight_L"},
+         ["he1l", 0.50,  -2.10,   0.76],
+         ["he3l", 0.49,  -2.11,   0.72],
+         ["he2l", 0.78,  -1.84,   0.78],
+         ["he4l", 0.78,  -1.88,   0.68],
+         //{"selfCollision":false}
+         ["he5l", 0.60,  -1.76,   0.72],
+         {"group":""},
+
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          //--HEADLIGHT--
+          {"beamSpring":1001000,"beamDamp":60},
+          {"beamDeform":12000,"beamStrength":128000},
+          //headlight main shape
+          {"deformGroup":"headlightglass_L_break", "deformationTriggerRatio":0.05},
+          //l
+          {"deformLimitExpansion":1.1},
+          ["he1l", "he2l"],
+          ["he3l", "he4l"],
+          ["he1l", "he3l"],
+          ["he2l", "he4l"],
+
+          ["he1l", "he4l"],
+          ["he2l", "he3l"],
+
+          ["he1l", "he5l"],
+          ["he2l", "he5l"],
+          ["he3l", "he5l"],
+          ["he4l", "he5l"],
+          //attach
+          {"deformLimitExpansion":""},
+          {"beamSpring":301000,"beamDamp":60},
+          {"beamDeform":3000,"beamStrength":28000},
+          //l
+          {"breakGroup":"headlight_L"},
+          ["he5l", "f15ll"],
+          ["he5l", "f15l"],
+          ["he2l", "f15ll"],
+          ["he2l", "f15l"],
+          ["he4l", "f15ll"],
+
+          {"beamDeform":3000,"beamStrength":28000},
+          {"breakGroup":"headlight_L"},
+          ["he1l", "f15ll"],
+          ["he1l", "f15l"],
+          ["he3l", "f15l"],
+          ["he3l", "f13ll"],
+          //["he1l","f13ll"],
+
+          {"beamDeform":1500,"beamStrength":46000},
+          ["he2l", "f18l"],
+          ["he4l", "f18l"],
+          ["he3l", "f11ll"],
+          {"breakGroup":""},
+          {"deformGroup":"", "deformationTriggerRatio":""},
+
+          //headlight support beams
+          {"beamType":"|SUPPORT", "beamLongBound":15},
+          {"beamSpring":601000,"beamDamp":90},
+          {"beamDeform":13000,"beamStrength":330000},
+          {"breakGroup":"headlight_L_supportBeams"},
+          {"optional":true},
+          ["he2l", "h4"],
+          ["he3l", "h4l"],
+          ["he5l", "h4ll"],
+          {"optional":false},
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"deformLimitExpansion":1.1},
+    ],
+    "triangles": [
+            ["id1:", "id2:", "id3:"],
+            //left headlight
+            {"groundModel":"plastic"},
+            {"group":"etk800_headlight_L"},
+            {"dragCoef":8.75},
+            ["he1l", "he3l", "he4l"],
+            ["he1l", "he4l", "he2l"],
+            {"triangleType":"NONCOLLIDABLE"},
+            ["he2l", "he4l", "he5l"],
+            ["he5l", "he1l", "he2l"],
+            ["he5l", "he3l", "he1l"],
+            ["he5l", "he4l", "he3l"],
+            {"triangleType":"NORMALTYPE"},
+            {"group":""},
+    ],
+},
+"etk800_headlightpanel_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Headlight Access Panel",
+        "value":20,
+    },
+    "slotType" : "etk800_headlightpanel_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"etk_common_acc", "deformMaterialDamaged":"invis"},
+         ["etk800_enginebay_cladding_R", ["etk800_body"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+        ["id",   "posX", "posY", "posZ"],
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"frictionCoef":0.5},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":1.6},
+        {"group":"etk800_headlight_R"},
+        ["he5r",-0.60,  -1.76,   0.72],
+    ],
+},
+"etk800_headlightpanel_L": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Headlight Access Panel",
+        "value":20,
+    },
+    "slotType" : "etk800_headlightpanel_L",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"etk_common_acc", "deformMaterialDamaged":"invis"},
+         ["etk800_enginebay_cladding_L", ["etk800_body"]],
+         {"deformGroup":""},
+    ],
+    "nodes": [
+        ["id",   "posX", "posY", "posZ"],
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"frictionCoef":0.5},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":1.6},
+        {"group":"etk800_headlight_L"},
+        ["he5l", 0.60,  -1.76,   0.72],
+    ],
+},
+}

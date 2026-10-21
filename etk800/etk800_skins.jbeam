@@ -1,0 +1,147 @@
+{
+"etk800_skin_interior": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Interior",
+        "value":500,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : ""
+},
+"etk800_skin_interior_beige": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Beige Interior",
+        "value":1600,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "beige"
+},
+"etk800_skin_interior_brown": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Brown Interior",
+        "value":3200,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "brown"
+},
+"etk800_skin_interior_white": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"White Interior",
+        "value":1600,
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "white"
+},
+"etk800_skin_interior_ttsport": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Interior",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.ttSport"
+            }
+        },
+        "value":4400
+    },
+    "slotType" : "skin_interior",
+    "skinName" : "ttsport"
+},
+"etk800_skin_brushedtrim": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Brushed Trim",
+        "value":400
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "brushedtrim"
+},
+"etk800_skin_polizei": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Polizei Livery",
+        "value":3200
+    },
+    "slotType" : "paint_design",
+    "skinName" : "polizei"
+},
+"etk800_skin_policeBelasco": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Belasco Police Livery",
+        "value":3200
+    },
+    "slotType" : "paint_design",
+    "skinName" : "policeBelasco"
+},
+"etk800_skin_police": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Police Livery",
+        "value":3200
+    },
+    "slotType" : "paint_design",
+    "skinName" : "police"
+},
+"etk800_skin_polizia": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Polizia Livery",
+        "value":3200
+    },
+    "slotType" : "paint_design",
+    "skinName" : "polizia"
+},
+"etk800_skin_carabinieri": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Carabinieri Livery",
+        "value":3200
+    },
+    "slotType" : "paint_design",
+    "skinName" : "carabinieri"
+},
+"etk800_skin_drivingexperience": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Driving Experience",
+        "value":1900
+    },
+    "slotType" : "paint_design",
+    "skinName" : "drivingexperience"
+},
+"etk800_skin_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Clockwise Livery (Colorable)",
+        "value":3000
+    },
+    "slotType" : "paint_design",
+    "skinName" : "race"
+},
+"etk800_skin_rennspecht": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Stripes (Colorable)",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Rennspecht"
+            }
+        },
+        "value":950
+    },
+    "slotType" : "paint_design",
+    "skinName" : "rennspecht"
+},
+"etk800_skin_heritage": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heritage Edition (Colorable)",
+        "value":1000
+    },
+    "slotType" : "paint_design",
+    "skinName" : "heritage"
+},
+}

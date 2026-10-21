@@ -1,0 +1,56 @@
+{
+"etk800_innerfenders": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Inner Fenders",
+        "value":235,
+    },
+
+    "slotType" : "etk800_innerfenders",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_tubs", ["etk800_body","etk800_tubs"]],
+    ],
+    "nodes": [
+        ["id",    "posX", "posY", "posZ"],
+        //--INNER FENDERS--
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"collision":true},
+        {"selfCollision":true},
+
+        {"nodeWeight":4.5},
+        {"group":"etk800_tubs"},
+        ["f19rr",-0.81,  -1.81,   0.25],
+        ["f19ll", 0.81,  -1.81,   0.25],
+    ],
+},
+"etk800_innerfenders_wide": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Widebody Front Inner Fenders",
+        "value":235,
+    },
+
+    "slotType" : "etk800_innerfenders",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_tubs_wide", ["etk800_body","etk800_tubs"]],
+    ],
+    "nodes": [
+        ["id",    "posX", "posY", "posZ"],
+        //--INNER FENDERS--
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"collision":true},
+        {"selfCollision":true},
+
+        {"nodeWeight":4.5},
+        {"group":"etk800_tubs"},
+        ["f19rr",-0.83,  -1.81,   0.25],
+        ["f19ll", 0.83,  -1.81,   0.25],
+    ],
+},
+}

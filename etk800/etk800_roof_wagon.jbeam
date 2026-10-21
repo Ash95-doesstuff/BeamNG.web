@@ -1,0 +1,124 @@
+{
+"etk800_roof_wagon": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Plain Roof",
+        "value":400,
+    },
+    "slotType" : "etk800_roof_wagon",
+    "slots2": [
+        ["name",                   "allowTypes",               "denyTypes", "default",                "description"],
+        ["etk800_headliner_wagon", ["etk800_headliner_wagon"], [],          "etk800_headliner_wagon", "Headliner",   {"coreSlot":true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //body
+         ["etk800_roof", ["etk800_body"]],
+    ],
+},
+"etk800_roof_wagon_sun": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Sunroof",
+        "value":2500,
+    },
+    "slots2": [
+        ["name",                           "allowTypes",                       "denyTypes", "default",                        "description"],
+        ["etk800_glass_sunroof_wagon",     ["etk800_glass_sunroof_wagon"],     [],          "etk800_glass_sunroof_wagon",     "Sunroof Glass"],
+        ["etk800_headliner_wagon_sunroof", ["etk800_headliner_wagon_sunroof"], [],          "etk800_headliner_wagon_sunroof", "Headliner",     {"coreSlot":true}],
+    ],
+    "slotType" : "etk800_roof_wagon",
+    "nodes": [
+         //redefine roof node
+         ["id",   "posX", "posY", "posZ"],
+         {"group":"etk800_body"},
+         {"selfCollision":true},
+         {"collision":true},
+         {"nodeWeight":2.0},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         ["rf2r",-0.56,   0.435,  1.36,   {"group":["etk800_body","etk800_roof"]}],
+         ["rf2",  0,      0.40,   1.39,   {"nodeWeight":1.5,"group":["etk800_body","etk800_roof"]}],
+         ["rf2l", 0.56,   0.435,  1.36,   {"group":["etk800_body","etk800_roof"]}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //body
+         ["etk800_roof_sunroof", ["etk800_body"]],
+    ],
+},
+"etk800_headliner_wagon": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Headliner",
+        "value":100,
+    },
+    "slotType" : "etk800_headliner_wagon",
+    "slots2": [
+        ["name",             "allowTypes", "denyTypes", "default",         "description"],
+        ["etk800_sunvisors", ["etk800_sunvisors"], [], "etk800_sunvisors", "Sunvisors"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //body
+         ["etk800_headliner", ["etk800_body"]],
+         ["etk800_roofcover", ["etk800_body"]],
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.16
+    }
+},
+"etk800_headliner_wagon_stripped": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stripped Headliner",
+        "value":0,
+    },
+    "slotType" : "etk800_headliner_wagon",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //body
+         ["etk800_headliner_stripped", ["etk800_body"]],
+         ["etk800_roofcover_stripped", ["etk800_body"]],
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.08
+    }
+},
+"etk800_headliner_wagon_sunroof": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Headliner",
+        "value":100,
+    },
+    "slotType" : "etk800_headliner_wagon_sunroof",
+    "slots2": [
+        ["name",             "allowTypes", "denyTypes", "default",         "description"],
+        ["etk800_sunvisors", ["etk800_sunvisors"], [], "etk800_sunvisors", "Sunvisors"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //body
+         ["etk800_headliner", ["etk800_body"]],
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.06
+    }
+},
+"etk800_headliner_wagon_stripped_sunroof": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stripped Headliner",
+        "value":0,
+    },
+    "slotType" : "etk800_headliner_wagon_sunroof",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //body
+         ["etk800_headliner_stripped", ["etk800_body"]],
+    ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.0
+    }
+},
+}

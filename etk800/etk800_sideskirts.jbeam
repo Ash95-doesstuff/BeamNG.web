@@ -1,0 +1,19 @@
+{
+"etk800_wide_sideskirt": {
+    "information":{
+        "authors":"BeamNG",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Side Skirts",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.ttSport"
+            }
+        },
+        "value":500,
+    },
+    "slotType" : "etk800_wide_sideskirt",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_sideskirt_sport", ["etk800_body"]],
+    ],
+},
+}
